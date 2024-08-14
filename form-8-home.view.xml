@@ -1,0 +1,253 @@
+<mvc:View controllerName="projectpricef1.controller.home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+ 	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<!-- <breadcrumbs>
+					<m:Breadcrumbs>
+						<m:Link text="Page 1 a very long link" press="handleLink1Press"/>
+						<m:Link text="Page 2 long link" press="handleLink2Press"/>
+					</m:Breadcrumbs>
+				</breadcrumbs> -->
+
+				<expandedHeading>
+					<m:Title text="{i18n>form_name}" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<!-- <m:Avatar src="./test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/> -->
+						<m:Title text="{i18n>form_name}" wrapping="true"/>
+					</m:FlexBox>
+				</snappedHeading>
+
+				<!-- <snappedContent>
+					<m:Text text="Senior UI Developer"/>
+				</snappedContent>
+
+				<expandedContent>
+					<m:Text text="Senior UI Developer"/>
+				</expandedContent>
+
+				<snappedTitleOnMobile>
+					<m:Title text="Senior UI Developer"/>
+				</snappedTitleOnMobile>
+
+				<actions>
+					<m:Button type="Emphasized" text="Focus" press="handleFocusBtnPress"/>
+				</actions> -->
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<!-- <m:FlexBox wrap="Wrap" fitContainer="true">
+				<m:Avatar class="sapUiSmallMarginEnd" src="./test-resources/sap/uxap/images/imageID_275314.png" displaySize="L"/>
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Link text="+33 6 4512 5158"/>
+					<m:Link text="DeniseSmith@sap.com"/>
+					<layout:HorizontalLayout>
+						<m:Image src="./test-resources/sap/uxap/images/linkedin.png"/>
+						<m:Image src="./test-resources/sap/uxap/images/Twitter.png" class="sapUiSmallMarginBegin"/>
+					</layout:HorizontalLayout>
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="Hello! I am Denise and I use UxAP"/>
+					<m:VBox>
+						<m:Label text="Achieved goals"/>
+						<m:ProgressIndicator percentValue="30" displayValue="30%"/>
+					</m:VBox>
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="San Jose, USA"/>
+				</layout:VerticalLayout>
+			</m:FlexBox> -->
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection titleUppercase="false" id="Employment" title="section-1">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>pr_no}"/>
+								<m:Input/>
+								<m:Label text="{i18n>budget_privision}"/>
+								<m:Input/>
+								<m:Label text="{i18n>backup_measurement}"/>
+								<m:Input />
+								<m:Label text="{i18n>brief_history}"/>
+								<m:Input />
+
+								<m:Label text="{i18n>description}"/>
+								<m:Input/>
+								<m:Label text="{i18n>amount_provided}"/>
+								<m:Input />
+								<m:Label text="{i18n>backup_rates}"/>
+								<m:Input />
+								<m:Label text="{i18n>financial_viability}"/>
+								<m:Input />
+
+								<m:Label text="{i18n>cost_center}"/>
+								<m:Input />
+								<m:Label text="{i18n>backup_quantities}"/>
+								<m:Input />
+								<m:Label text="{i18n>total_amount_estimate}"/>
+								<m:Input />
+								<m:Label text="{i18n>scope_defining}"/>
+								<m:Input />
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="Employmsent" title="section-2">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>basis_rates_quantities}"/>
+								<m:Input/>
+								<m:Label text="{i18n>time_estimates_perpared}"/>
+								<m:Input/>
+	
+
+								<m:Label text="{i18n>time_estimated_commencement}"/>
+								<m:Input/>
+								<m:Label text="{i18n>type_tender}"/>
+								<m:Input />
+	
+
+								<m:Label text="{i18n>chart_attached}"/>
+								<m:Input />
+								<m:Label text="{i18n>please_specify}"/>
+								<m:Input />
+
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="Emplo" title="Table">
+				
+					<ObjectPageSubSection titleUppercase="false">
+
+	<m:ScrollContainer
+	id="idScrollContainer"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+	<m:Table id="idProductsTable"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+		<!-- <headerToolbar>
+
+		</headerToolbar>
+		<infoToolbar>
+			
+		</infoToolbar> -->
+		<m:columns>
+			<m:Column width="12em">
+				<m:Text text="{i18n>table_title}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>item_code}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>t_des}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>uom}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>qty}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>basic_for_estimate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>previous_po}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>po_date}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>po_unit_rate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>escalated_price}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>budget_offer}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>final_estimate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>total_amount}" />
+			</m:Column>
+		</m:columns>
+		<m:items>
+			<m:ColumnListItem vAlign="Middle">
+				<m:cells>
+					<m:ObjectIdentifier
+						text="201"/>
+					<m:Text
+						text="test description" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="50" />
+					<m:Text
+						text="test" />	
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="50" />
+					<m:Text
+						text="test" />	
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+</m:ScrollContainer>
+
+					</ObjectPageSubSection>
+
+
+                    
+			
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
