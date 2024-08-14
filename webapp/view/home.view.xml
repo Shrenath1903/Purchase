@@ -1,0 +1,276 @@
+<mvc:View controllerName="projectpricef1.controller.home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+ 	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<!-- <breadcrumbs>
+					<m:Breadcrumbs>
+						<m:Link text="Page 1 a very long link" press="handleLink1Press"/>
+						<m:Link text="Page 2 long link" press="handleLink2Press"/>
+					</m:Breadcrumbs>
+				</breadcrumbs> -->
+
+				<expandedHeading>
+					<m:Title text="{i18n>form_name}" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<!-- <m:Avatar src="./test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/> -->
+						<m:Title text="{i18n>form_name}" wrapping="true"/>
+					</m:FlexBox>
+				</snappedHeading>
+
+
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection titleUppercase="false" id="section-1" title="section-1">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>austry_app_dept}"/>
+								<m:Input/>
+								<m:Label text="{i18n>austry_app_sub}"/>
+								<m:Input/>
+								<m:Label text="{i18n>austry_app_pr_no}"/>
+								<m:Input/>
+
+								<m:Label text="{i18n>austry_app_estimated_cost}"/>
+								<m:Input />
+								<m:Label text="{i18n>austry_app_type_indent}"/>
+								<m:Input/>
+								<m:Label text="{i18n>austry_app_lead_time_delivery}"/>
+								<m:Input />
+
+								<m:Label text="{i18n>austry_app_present_stock_level}"/>
+								<m:Input />
+								<m:Label text="{i18n>austry_app_past_consumption_patterns}"/>
+								<m:Input />
+								<m:Label text="{i18n>austry_app_expected_consumption}"/>
+								<m:Input />
+	
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="section-2" title="section-2">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="2" columnsXL="2">
+							<f:content>
+								<m:Label text="{i18n>austry_app_reason_indenting}"/>
+									<m:TextArea value="" cols="0" rows="4" />
+
+								<m:Label text="{i18n>austry_app_risk_out_service}"/>
+									<m:TextArea value="" cols="0" rows="4" />
+	
+
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+			    <ObjectPageSection titleUppercase="false" id="section-3" title="section-3">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="2" columnsXL="2">
+							<f:content>
+								<m:Label text="{i18n>austry_app_risk_diferment}"/>
+									<m:TextArea value="" cols="0" rows="4" />
+
+								<m:Label text="{i18n>austry_app_proposal}"/>
+									<m:TextArea value="" cols="0" rows="4" />
+	
+
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+<ObjectPageSection titleUppercase="false" id="section-4" title="DELEGATION OF AUTHORITY">
+	<subSections>
+		<ObjectPageSubSection titleUppercase="false">
+			<f:SimpleForm editable="true" columnsM="1" columnsL="1" columnsXL="1">
+				<f:content>
+					<!-- Label above -->
+					<!-- Text below -->
+					<m:Text text="{i18n>austry_app_amended_office_order}" />
+				</f:content>
+			</f:SimpleForm>
+		</ObjectPageSubSection>
+	</subSections>
+</ObjectPageSection>
+
+
+
+<ObjectPageSection titleUppercase="false" id="section-5" title="BUDGET PROVISION">
+	<subSections>
+		<ObjectPageSubSection titleUppercase="false">
+			<f:SimpleForm editable="true" columnsM="1" columnsL="1" columnsXL="1">
+				<f:content>
+					<!-- Label above -->
+					<!-- Text below -->
+					<!-- <m:Label text="{i18n>austry_app_dept_budget_provision}"/> -->
+					<m:TextArea value="" cols="0" rows="4" />
+
+				</f:content>
+			</f:SimpleForm>
+		</ObjectPageSubSection>
+	</subSections>
+</ObjectPageSection>
+
+
+      <ObjectPageSection titleUppercase="false" id="Emplo" title="Table">
+	<ObjectPageSubSection titleUppercase="false">
+		<!-- Toolbar with buttons -->
+
+		
+		<m:ScrollContainer
+			id="idScrollContainer"
+			width="100%"
+			height="auto"
+			horizontal="true"
+			vertical="false">
+			<m:Table id="idProductsTable"
+				inset="false"
+				growing="true"
+				growingScrollToLoad="true"
+				items="">
+					<m:headerToolbar>
+<m:OverflowToolbar id="otbSubheader">
+	<m:Button 
+        id="editButton" 
+        text="+" 
+        ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+        press="onEdit" 
+        type="Emphasized" />
+	
+	<m:Button 
+        id="saveButton" 
+        text="-" 
+        press="onSave" 
+        type="Emphasized" 
+        visible="true" />
+	
+	<m:Button 
+        id="cancelButton" 
+        text="Back" 
+        press="onCancel" 
+        type="Emphasized" 
+        visible="true" />
+</m:OverflowToolbar>
+
+				</m:headerToolbar>
+
+				<m:columns>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_dept_emp_code}" />
+					</m:Column>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_emp_name}" />
+					</m:Column>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_emp_desi}" />
+					</m:Column>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_authority_level}" />
+					</m:Column>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_status}" />
+					</m:Column>
+					<m:Column width="12em">
+						<m:Text text="{i18n>austry_app_remarks}" />
+					</m:Column>
+				</m:columns>
+				
+				<m:items>
+					<m:ColumnListItem vAlign="Middle">
+						<m:cells>
+							<m:ObjectIdentifier text="" />
+							<m:Text text="" />
+							<m:Text text="" />
+							<m:Text text="{i18n>austry_app_prop1}" />
+							<m:Text text="" />	
+							<m:Text text="" />
+						</m:cells>
+					</m:ColumnListItem>
+
+										<m:ColumnListItem vAlign="Middle">
+						<m:cells>
+							<m:ObjectIdentifier text="" />
+							<m:Text text="" />
+							<m:Text text="" />
+							<m:Text text="{i18n>austry_app_prop2}" />
+							<m:Text text="" />	
+							<m:Text text="" />
+						</m:cells>
+					</m:ColumnListItem>
+
+										<m:ColumnListItem vAlign="Middle">
+						<m:cells>
+							<m:ObjectIdentifier text="" />
+							<m:Text text="" />
+							<m:Text text="" />
+							<m:Text text="{i18n>austry_app_recom1}" />
+							<m:Text text="" />	
+							<m:Text text="" />
+						</m:cells>
+					</m:ColumnListItem>
+
+										<m:ColumnListItem vAlign="Middle">
+						<m:cells>
+							<m:ObjectIdentifier text="" />
+							<m:Text text="" />
+							<m:Text text="" />
+							<m:Text text="{i18n>austry_app_recom2}" />
+							<m:Text text="" />	
+							<m:Text text="" />
+						</m:cells>
+					</m:ColumnListItem>
+
+										<m:ColumnListItem vAlign="Middle">
+						<m:cells>
+							<m:ObjectIdentifier text="" />
+							<m:Text text="" />
+							<m:Text text="" />
+							<m:Text text="{i18n>austry_app_appr1}" />
+							<m:Text text="" />	
+							<m:Text text="" />
+						</m:cells>
+					</m:ColumnListItem>
+					<!-- Additional items -->
+				</m:items>
+			</m:Table>
+		</m:ScrollContainer>
+	</ObjectPageSubSection>
+</ObjectPageSection>
+
+
+
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

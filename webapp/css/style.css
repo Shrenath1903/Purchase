@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+
+.customCenter {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    height: 100%;            /* Ensure it takes the full height of the parent */
+    width: 100%;             /* Ensure it takes the full width of the parent */
+}
