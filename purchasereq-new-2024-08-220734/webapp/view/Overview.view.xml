@@ -1,0 +1,151 @@
+<mvc:View controllerName="mrpl.mm.releasedprs.purchasereq.controller.Overview"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:svm="sap.ui.comp.smartvariants">
+	<f:DynamicPage headerExpanded="{/headerExpanded}">
+		<f:title>
+			<f:DynamicPageTitle></f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader>
+				<f:content>
+					<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem name="PurchaseRequisition" label="{i18n>headerName5}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name="PurchaseRequisition"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestPurchaseRequisition"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="PurReqnReleaseStatus" label="{i18n>headerName1}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name=""
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestPurReqnReleaseStatus"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="PurchaseRequisitionPrice" label="{i18n>headerName2}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name="Purchase Requisition Price"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestPurchaseRequisitionPrice"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="CreationDate" label="{i18n>headerName3}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name="Delivery Date/Time"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestCreationDate"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="DeliveryDate" label="{i18n>headerName4}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name="Creation Date"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestDeliveryDate"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem name="PurchasingDocumentItem" label="{i18n>headerName6}" groupName="Group1" visibleInFilterBar="true">
+								<fb:control>
+									<Input
+                                name="PurchasingDocumentItem"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequestPurchasingDocumentItem"
+                            />
+								</fb:control>
+							</fb:FilterGroupItem>
+
+						</fb:filterGroupItems>
+					</fb:FilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table
+					id="table"
+					inset="false"
+                    growing="true"
+                    growingScrollToLoad="true"
+					mode="SingleSelectMaster"
+					items="{
+						path: '/ZC_MM_PURREQ'
+					}"
+                     selectionChange=".onRowSelectionChange"
+				>
+				<headerToolbar>
+					<Toolbar>
+						<content>
+							<Title text="Purchase Requisition Overview" level="H2"/>
+							<ToolbarSpacer />
+							<Button icon="sap-icon://detail-more" press=".moreDeatils"/>
+							<Button icon="sap-icon://detail-less" press=".lessDeatils"/>
+							<Button icon="sap-icon://action-settings" press=".onSettingsPress"/>
+							<MenuButton>
+								<Menu>
+									<items>
+										<MenuItem text="Export"  press=".onExportPress"/>
+										<MenuItem text="Export As"  press=".onExportAsPress"/>
+									</items>
+								</Menu>
+							</MenuButton>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName5}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName1}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName2}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName3}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName4}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>headerName6}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle" >
+						<cells>
+							<Text text="{PurchaseRequisition}" />
+							<ObjectIdentifier text="{PurReqnReleaseStatus}" />
+							<ObjectNumber number="{
+                parts: [
+                    {path: 'PurchaseRequisitionPrice'},
+                    {path: 'PurReqnItemCurrency'}
+                ],
+                type: 'sap.ui.model.type.Currency',
+                formatOptions: {showMeasure: false}
+            }"
+            unit="{PurReqnItemCurrency}"/>
+							<Text text="{path: 'CreationDate', formatter: '.formatter.formatCreationDate'} / {path: 'CreationTime',   type: 'sap.ui.model.odata.type.Time'}"/>
+							<Text text="{path: 'DeliveryDate', formatter: '.formatter.formatCreationDate'}" />
+							<Text text="{PurchasingDocumentItem}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

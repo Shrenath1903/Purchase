@@ -1,0 +1,29 @@
+{
+    "applications": {
+        "ceg-ceg": {
+            "additionalInformation": "SAPUI5.Component=mrpl.etender.ceg",
+            "applicationType": "URL",
+            "url": "../resources/mrpl.etender.ceg"
+        },
+        "pqcform-pqcform": {
+            "additionalInformation": "SAPUI5.Component=mrpl.etender.pqc",
+            "applicationType": "URL",
+            "url": "../resources/mrpl.etender.pqc"
+        },
+        "singletendercert-singletendercert": {
+            "additionalInformation": "SAPUI5.Component=mrpl.etender.singlecertificatetender",
+            "applicationType": "URL",
+            "url": "../resources/mrpl.etender.singlecertificatetender"
+        },
+        "austerityapproval-austerityapproval": {
+            "additionalInformation": "SAPUI5.Component=mrpl.etender.austerityapproval",
+            "applicationType": "URL",
+            "url": "../resources/mrpl.etender.austerityapproval"
+        },
+        "emp_details_form-emp_details_form": {
+            "additionalInformation": "SAPUI5.Component=emddetailsform",
+            "applicationType": "URL",
+            "url": "../resources/emddetailsform"
+        }
+    }
+}
