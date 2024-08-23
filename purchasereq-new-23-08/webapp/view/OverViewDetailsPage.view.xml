@@ -41,9 +41,8 @@
 
         <!-- Second Vertical Layout goes to the right -->
         <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-            <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice}"/>
+            <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice} {tileJSONModel>/PurReqnItemCurrency}"/>
             <m:ObjectStatus text="{tileJSONModel>/PurReqnItemCurrency}"/>
-        
             <m:ObjectStatus
                 text="{path: 'tileJSONModel>/DeliveryDate', formatter: '.formatter.formatCreationDate'}"
                 state="Success" />
