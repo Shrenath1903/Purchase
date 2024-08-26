@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog
+        title="Creation Date"
+        afterClose=".onValueHelpClose">
+		<List
+            mode="SingleSelectLeft"
+            items="{/ZC_MM_PURREQ}"
+            includeItemInSelection="true"
+            selectionChange=".onCreationDateChange">
+			<StandardListItem
+                title="{path: 'CreationDate', formatter: '.formatter.formatCreationDate'}"/>
+		</List>
+		<endButton>
+			<Button text="Close" press=".onCreationDateClose" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

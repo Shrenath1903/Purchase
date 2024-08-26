@@ -1,0 +1,547 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:p="sap.suite.ui.commons"
+	controllerName="mrpl.mm.releasedprs.purchasereq.controller.OverViewDetailsPage"
+	height="100%">
+
+    
+<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+
+				<ObjectPageDynamicHeaderTitle>
+					<expandedHeading>
+						<m:Title text="{tileJSONModel>/PurchaseRequisition}"  binding="{tileJSONModel>/}" wrapping="true"/>
+					</expandedHeading>
+
+					<snappedHeading>
+						<m:FlexBox fitContainer="true" alignItems="Center">
+							<m:Title text="{tileJSONModel>/PurchaseRequisition}"  binding="{tileJSONModel>/}" wrapping="true" />
+						</m:FlexBox>
+					</snappedHeading>
+				</ObjectPageDynamicHeaderTitle>
+                 
+        </headerTitle>
+
+<headerContent>
+    <m:FlexBox wrap="Wrap" justifyContent="SpaceBetween"> <!-- Changed to "SpaceBetween" -->
+        <!-- First Vertical Layout stays on the left -->
+        <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+            <!-- <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice}"/> -->
+            <m:ObjectStatus text="{tileJSONModel>/PurReqnReleaseStatus}"/>
+            <m:ObjectStatus text="{tileJSONModel>/PurchasingDocumentItem}"/> 
+                <m:ObjectStatus
+                text="{path: 'tileJSONModel>/CreationDate', formatter: '.formatter.formatCreationDate'} - {path: 'tileJSONModel>/CreationTime', type: 'sap.ui.model.odata.type.Time'}"
+                state="Error" />
+        </layout:VerticalLayout>
+
+        <!-- Second Vertical Layout goes to the right -->
+        <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+            <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice} {tileJSONModel>/PurReqnItemCurrency}"/>
+            <m:ObjectStatus text="{tileJSONModel>/PurReqnItemCurrency}"/>
+            <m:ObjectStatus
+                text="{path: 'tileJSONModel>/DeliveryDate', formatter: '.formatter.formatCreationDate'}"
+                state="Success" />
+        </layout:VerticalLayout>
+    </m:FlexBox>
+</headerContent>
+
+
+
+
+
+		<sections>
+		    <ObjectPageSection titleUppercase="false" id="Employments" title="{i18n>Process_header}">
+                        <subSections>
+                            <ObjectPageSubSection titleUppercase="false">
+                            <m:Panel>
+                                    <p:ProcessFlow
+                                        id="processflow1"
+                                        scrollable="false"
+                                        foldedCorners="true"
+                                        nodePress="onNodePress"
+                                        nodes="{/nodes}"
+                                        lanes="{/lanes}">
+                                        <p:nodes>
+                                            <p:ProcessFlowNode
+                                                laneId="{lane}"
+                                                nodeId="{id}"
+                                                title="{title}"
+                                                titleAbbreviation="{titleAbbreviation}"
+                                                children="{children}"
+                                                state="{state}"
+                                                stateText="{stateText}"
+                                                texts="{texts}"
+                                                highlighted="{highlighted}"
+                                                focused="{focused}" />
+                                        </p:nodes>
+                                        <p:lanes>
+                                            <p:ProcessFlowLaneHeader
+                                                laneId="{id}"
+                                                iconSrc="{icon}"
+                                                text="{label}"
+                                                position="{position}" />
+                                        </p:lanes>
+                                    </p:ProcessFlow>
+                                </m:Panel>
+                            </ObjectPageSubSection>
+                        </subSections>
+            </ObjectPageSection>
+
+                         <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>Header1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                              <m:Label text="{i18n>label1}"/>
+								<m:Text text="{tileJSONModel>/PurReqnDescription}"/>
+								<m:Label text="{i18n>label2}"/>
+								<m:Text text="{tileJSONModel>/PurchaseRequisitionType}"/>
+								<m:Label text="{i18n>label3}"/>
+								<m:Text text="{tileJSONModel>/PurchasingDocumentCategory}"/>
+								<m:Label text="{i18n>label4}"/>
+								<m:Text text="{tileJSONModel>/PurchasingDocumentSubtype}"/>
+								<m:Label text="{i18n>label5}"/>
+								<m:Text text="{tileJSONModel>/IsDeleted}"/>
+								<m:Label text="{i18n>label6}"/>
+								<m:Text text="{tileJSONModel>/ProcessingStatus}"/>
+								<m:Label text="{i18n>label7}"/>
+								<m:Text text="{tileJSONModel>/PurReqnOrigin}"/>
+								<m:Label text="{i18n>label8}"/>
+								<m:Text text="{tileJSONModel>/ReleaseCode}"/>
+								<m:Label text="{i18n>label9}"/>
+								<m:Text text="{tileJSONModel>/ReleaseStrategy}"/>
+								<m:Label text="{i18n>label10}"/>
+								<m:Text text="{tileJSONModel>/PurchasingGroup}"/>
+								<m:Label text="{i18n>label11}"/>
+								<m:Text text="{tileJSONModel>/CreatedByUser}"/>
+								<m:Label text="{i18n>label12}"/>
+								<m:Text text="{path: 'tileJSONModel>/LastChangedDate', formatter: '.formatter.formatCreationDate'}"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                         <ObjectPageSection titleUppercase="false" id="Employmsent" title="{i18n>Header2}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>label13}"/>
+                                 <m:Text text="{tileJSONModel>/RequisitionerName}"/>
+                                 <m:Label text="{i18n>label14}"/>
+                                 <m:Text text="{tileJSONModel>/PurchaseRequisitionItemText}"/>
+                                 <m:Label text="{i18n>label15}"/>
+                                 <m:Text text = "{tileJSONModel>/Material}"/>
+                                 <m:Label text="{i18n>label16}"/>
+                                 <m:Text text = "{tileJSONModel>/ManufacturerMaterial}"/>
+                                 <m:Label text="{i18n>label17}"/>
+                                 <m:Text text = "{tileJSONModel>/Plant}"/>
+                                 <m:Label text="{i18n>label18}"/>
+                                 <m:Text text = "{tileJSONModel>/StorageLocation}"/>
+                                 <m:Label text="{i18n>label19}"/>
+                                 <m:Text text = "{tileJSONModel>/RequirementTracking}"/>
+                                 <m:Label text="{i18n>label20}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialGroup}"/>
+                                 <m:Label text="{i18n>label21}"/>
+                                 <m:Text text = "{tileJSONModel>/SupplyingPlant}"/>
+                                 <m:Label text="{i18n>label22}"/>
+                                 <m:Text text = "{tileJSONModel>/RequestedQuantity}"/>
+                                 <m:Label text="{i18n>label23}"/>
+                                 <m:Text text = "{tileJSONModel>/BaseUnit}"/>
+                                 <m:Label text="{i18n>label24}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialShortageQuantity}"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+ 
+  <ObjectPageSection titleUppercase="false" id="headerShow" title="{i18n>Header3}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="3" columnsXL="3">
+                            <f:content>
+                                <m:Label text="{i18n>label25}"/>
+                                 <m:Text text = "{path: 'tileJSONModel>/PurReqCreationDate', formatter: '.formatter.formatCreationDate'}"/>
+                                 <m:Label text="{i18n>label26}"/>
+                                 <m:Text text = "{path: 'tileJSONModel>/PurchaseRequisitionReleaseDate', formatter: '.formatter.formatCreationDate'}"/>
+                                 <m:Label text="{i18n>label27}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialGoodsReceiptDuration}"/>
+                                 <m:Label text="{i18n>label27.1}"/>
+                                 <m:Text text = "{tileJSONModel>PurReqnPriceQuantity}"/>
+                                 <m:Label text="{i18n>label28}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingDocumentItemCategory}"/>
+                                 <m:Label text="{i18n>label29}"/>
+                                 <m:Text text = "{tileJSONModel>/AccountAssignmentCategory}"/>
+                                 <m:Label text="{i18n>label30}"/>
+                                 <m:Text text = "{tileJSONModel>/ConsumptionPosting}"/>
+                                 <m:Label text="{i18n>label31}"/>
+                                 <m:Text text = "{tileJSONModel>/MultipleAcctAssgmtDistribution}"/>
+                                 <m:Label text="{i18n>label32}"/>
+                                 <m:Text text = "{tileJSONModel>/PartialInvoiceDistribution}"/>
+                                 <m:Label text="{i18n>label33}"/>
+                                 <m:Text text = "{tileJSONModel>/GoodsReceiptIsExpected}"/>
+                                 <m:Label text="{i18n>label34}"/>
+                                 <m:Text text = "{tileJSONModel>/GoodsReceiptIsNonValuated}"/>
+                                 <m:Label text="{i18n>label35}"/>
+                                 <m:Text text = "{tileJSONModel>/InvoiceIsExpected}"/>
+                                 <m:Label text="{i18n>label36}"/>
+                                 <m:Text text = "{tileJSONModel>/Supplier}"/>
+                               
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+
+              <ObjectPageSection titleUppercase="false" id="secTitle" title="{i18n>Header4}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label37}"/>
+                                 <m:Text text = "{tileJSONModel>/FixedSupplier}"/>
+                                 <m:Label text="{i18n>label38}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingOrganization}"/>
+                                 <m:Label text="{i18n>label39}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSourceOfSupplyType}"/>
+                                 <m:Label text="{i18n>label40}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseContract}"/>
+                                 <m:Label text="{i18n>label41}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseContractItem}"/>
+                                 <m:Label text="{i18n>label42}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingInfoRecord}"/>
+                                 <m:Label text="{i18n>label43}"/>
+                                 <m:Text text = "{tileJSONModel>/SourceOfSupplyIsAssigned}"/>
+                                 <m:Label text="{i18n>label44}"/>
+                                 <m:Text text = "{tileJSONModel>/MRPController}"/>
+                                 <m:Label text="{i18n>label45}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingDocument}"/>
+                                 <m:Label text="{i18n>label46}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingDocumentItem}"/>
+                                <m:Label text="{i18n>label47}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseOrderDate }"/>
+                                 <m:Label text="{i18n>label48}"/>
+                                 <m:Text text = "{tileJSONModel>/OrderedQuantity}"/>
+                             
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+
+            
+             <ObjectPageSection titleUppercase="false" id="secnTitle" title="{i18n>Header5}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                
+                                 <m:Label text="{i18n>label49}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnLimitConsumptionAmt}"/>
+                                 <m:Label text="{i18n>label50}"/>
+                                 <m:Text text = "{tileJSONModel>/IsClosed}"/>
+                                 <m:Label text="{i18n>label51}"/>
+                                 <m:Text text = "{tileJSONModel>/Reservation}"/>
+                                 <m:Label text="{i18n>label52}"/>
+                                 <m:Text text = "{tileJSONModel>/InventorySpecialStockType}"/>
+                                 <m:Label text="{i18n>label53}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseRequisitionIsFixed}"/>
+                                 <m:Label text="{i18n>label54}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialOrderUnit}"/>
+                                 <m:Label text="{i18n>label55}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialRevisionLevel}"/>
+                                 <m:Label text="{i18n>label56}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseOrderPriceType}"/>
+                                 <m:Label text="{i18n>label57}"/>
+                                 <m:Text text = "{tileJSONModel>/ReleaseGroup}"/>
+                                 <m:Label text="{i18n>label58}"/>
+                                 <m:Text text = "{tileJSONModel>/ReleaseIsNotCompleted}"/>
+                                 <m:Label text="{i18n>label59}"/>
+                                 <m:Text text = "{tileJSONModel>/Batch}"/>
+                                 <m:Label text="{i18n>label60}"/>
+                                 <m:Text text = "{tileJSONModel>/CommitmentItemShortID}"/>
+                                
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                   
+                </subSections>
+            </ObjectPageSection>
+<ObjectPageSection titleUppercase="false" id="6title" title="{i18n>Header6}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label61}"/>
+                                 <m:Text text = "{tileJSONModel>/FundsCenter}"/>
+                                 <m:Label text="{i18n>label62}"/>
+                                 <m:Text text = "{tileJSONModel>/Fund}"/>
+                                 <m:Label text="{i18n>label63}"/>
+                                 <m:Text text = "{tileJSONModel>/AddressID}"/>
+                                 <m:Label text="{i18n>label64}"/>
+                                 <m:Text text = "{tileJSONModel>/ManualDeliveryAddressID}"/>
+                                 <m:Label text="{i18n>label65}"/>
+                                 <m:Text text = "{tileJSONModel>/ItemDeliveryAddressID}"/>
+                                 <m:Label text="{i18n>label66}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnReceivingCustomer}"/>
+                                 <m:Label text="{i18n>label67}"/>
+                                 <m:Text text = "{tileJSONModel>/Subcontractor}"/>
+                                 <m:Label text="{i18n>label68}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnItemCurrency}"/>
+                                 <m:Label text="{i18n>label69}"/>
+                                 <m:Text text = "{tileJSONModel>/SupplierMaterialNumber}"/>
+                                 <m:Label text="{i18n>label70}"/>
+                                 <m:Text text = "{tileJSONModel>/IsPurReqnOvrlRel}"/>
+                                 <m:Label text="{i18n>label71}"/>
+                                 <m:Text text = "{tileJSONModel>/ManufacturerPartProfile}"/>
+                                 <m:Label text="{i18n>label72}"/>
+                                 <m:Text text = "{tileJSONModel>/Language}"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="7Title" title="{i18n>Header7}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>label73}"/>
+                                 <m:Text text = "{tileJSONModel>/ManufacturerPartNmbr}"/>
+                                  <m:Label text="{i18n>label74}"/>
+                                 <m:Text text = "{tileJSONModel>/MaterialPlannedDeliveryDurn}"/>
+                                  <m:Label text="{i18n>label75}"/>
+                                 <m:Text text = "{tileJSONModel>/MRPArea}"/>
+                                  <m:Label text="{i18n>label76}"/>
+                                 <m:Text text = "{tileJSONModel>/TaxCode}"/>
+                                  <m:Label text="{i18n>label77}"/>
+                                 <m:Text text = "{tileJSONModel>/FunctionalArea}"/>
+                                  <m:Label text="{i18n>label78}"/>
+                                 <m:Text text = "{tileJSONModel>/GrantID}"/>
+                                  <m:Label text="{i18n>label79}"/>
+                                 <m:Text text = "{tileJSONModel>/IsPurReqnCmplt}"/>
+                                  <m:Label text="{i18n>label80}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseRequisitionStatus}"/>
+                                  <m:Label text="{i18n>label81}"/>
+                                 <m:Text text = "{tileJSONModel>/IsPurReqnBlocked}"/>
+                                  <m:Label text="{i18n>label82}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnItemBlockingReasonText}"/>
+                                  <m:Label text="{i18n>label83}"/>
+                                 <m:Text text = "{tileJSONModel>/ProcuringPlant}"/>
+                                  <m:Label text="{i18n>label84}"/>
+                                 <m:Text text = "{tileJSONModel>/ExternalProcurementProfile}"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+  
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection titleUppercase="false" id="Tabtitle" title="{i18n>Header8}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>label85}"/>
+                                 <m:Text text = "{tileJSONModel>/EarmarkedFundsDocument}"/>
+                                  <m:Label text="{i18n>label86}"/>
+                                 <m:Text text = "{tileJSONModel>/EarmarkedFundsDocumentItem}"/>
+                                  <m:Label text="{i18n>label87}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnCmpltnsCat}"/>
+                                  <m:Label text="{i18n>label88}"/>
+                                 <m:Text text = "{tileJSONModel>/MinRemainingShelfLife}"/>
+                                  <m:Label text="{i18n>label89}"/>
+                                 <m:Text text = "{tileJSONModel>/BudgetPeriod}"/>
+                                  <m:Label text="{i18n>label90}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnIsCreatedInExpertMode}"/>
+                                  <m:Label text="{i18n>label91}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnIsValdInCntrlReqnProcg}"/>
+                                  <m:Label text="{i18n>label92}"/>
+                                 <m:Text text = "{tileJSONModel>/ProductTypeCode}"/>
+                                  <m:Label text="{i18n>label93}"/>
+                                 <m:Text text = "{tileJSONModel>/ServicePerformer}"/>
+                                  <m:Label text="{i18n>label94}"/>
+                                 <m:Text text = "{tileJSONModel>/IsEndOfPurposeBlocked}"/>
+                                  <m:Label text="{i18n>label95}"/>
+                                 <m:Text text = "{tileJSONModel>/PerformancePeriodStartDate }"/>
+                                  <m:Label text="{i18n>label96}"/>
+                                 <m:Text text = "{tileJSONModel>/PerformancePeriodEndDate }"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+ </ObjectPageSubSection>
+
+                </subSections>
+            </ObjectPageSection>
+ 
+                 <ObjectPageSection titleUppercase="false" id="9title" title="{i18n>Header9}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label97}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtMaterialForPurg}"/>
+                                  <m:Label text="{i18n>label98}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtFixedSupplierForPurg}"/>
+                                  <m:Label text="{i18n>label99}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtDesiredSupplierForPurg}"/>
+                                  <m:Label text="{i18n>label100}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtContractForPurg}"/>
+                                  <m:Label text="{i18n>label101}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtContractItemForPurg}"/>
+                                  <m:Label text="{i18n>label102}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtInfoRecordForPurg}"/>
+                                  <m:Label text="{i18n>label103}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtPlantForPurg}"/>
+                                  <m:Label text="{i18n>label104}"/>
+                                 <m:Text text = "{tileJSONModel>/ProcmtHubStorageLocation}"/>
+                                  <m:Label text="{i18n>label105}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtCompanyCodeForPurg}"/>
+                                  <m:Label text="{i18n>label106}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtPurgOrgForPurg}"/>
+                                  <m:Label text="{i18n>label107}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtSourceSystem}"/>
+                                  <m:Label text="{i18n>label108}"/>
+                                 <m:Text text = "{tileJSONModel>/ProcurementHubSourceSystem}"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+ </ObjectPageSubSection>
+
+                </subSections>
+            </ObjectPageSection>
+               <ObjectPageSection titleUppercase="false" id="10title" title="{i18n>Header10}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label109}"/>
+                                 <m:Text text = "{tileJSONModel>/ProcmtHubPurReqnItmIsChanged}"/>
+                                  <m:Label text="{i18n>label110}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtPurchaseRequisitionType}"/>
+                                  <m:Label text="{i18n>label111}"/>
+                                 <m:Text text = "{tileJSONModel>/ExternalApprovalStatus}"/>
+                                  <m:Label text="{i18n>label112}"/>
+                                 <m:Text text = "{tileJSONModel>/ExtApprvlIntmdSts}"/>
+                                  <m:Label text="{i18n>label113}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchaseReqnItemUniqueID}"/>
+                                  <m:Label text="{i18n>label114}"/>
+                                 <m:Text text = "{tileJSONModel>/LastChangeDateTime}"/>
+                                  <m:Label text="{i18n>label115}"/>
+                                 <m:Text text = "{tileJSONModel>/IsOnBehalfCart}"/>
+                                  <m:Label text="{i18n>label116}"/>
+                                 <m:Text text = "{tileJSONModel>/GLAccount}"/>
+                                  <m:Label text="{i18n>label117}"/>
+                                 <m:Text text = "{tileJSONModel>/CostCenter}"/>
+                                  <m:Label text="{i18n>label118}"/>
+                                 <m:Text text = "{tileJSONModel>/ExpectedOverallLimitAmount}"/>
+                                  <m:Label text="{i18n>label119}"/>
+                                 <m:Text text = "{tileJSONModel>/OverallLimitAmount}"/>
+                                  <m:Label text="{i18n>label120}"/>
+                                 <m:Text text = "{tileJSONModel>/PurContractForOverallLimit}"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+ </ObjectPageSubSection>
+
+                </subSections>
+            </ObjectPageSection>
+          
+
+                       <ObjectPageSection titleUppercase="false" id="11title" title="{i18n>Header11}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label121}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnIntObjNmbr}"/>
+                                  <m:Label text="{i18n>label122}"/>
+                                 <m:Text text = "{tileJSONModel>/ProductSeasonYear}"/>
+                                  <m:Label text="{i18n>label123}"/>
+                                 <m:Text text = "{tileJSONModel>/ProductSeason}"/>
+                                  <m:Label text="{i18n>label124}"/>
+                                 <m:Text text = "{tileJSONModel>/ProductCollection}"/>
+                                  <m:Label text="{i18n>label125}"/>
+                                 <m:Text text = "{tileJSONModel>/ProductTheme}"/>
+                                  <m:Label text="{i18n>label126}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSSPCrossCatalogItem}"/>
+                                  <m:Label text="{i18n>label127}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSSPCatalog}"/>
+                                  <m:Label text="{i18n>label128}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSSPCatalogItem}"/>
+                                  <m:Label text="{i18n>label129}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSSPRequestor}"/>
+                                  <m:Label text="{i18n>label130}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnSSPAuthor}"/>
+                                  <m:Label text="{i18n>label131}"/>
+                                 <m:Text text = "{tileJSONModel>/StockSegment}"/>
+                                  <m:Label text="{i18n>label132}"/>
+                                 <m:Text text = "{tileJSONModel>/RequirementSegment}"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+ </ObjectPageSubSection>
+
+                </subSections>
+            </ObjectPageSection>
+
+              <ObjectPageSection titleUppercase="false" id="12title" title="{i18n>Header12}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>label133}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingDeliveryAddressType}"/>
+                                  <m:Label text="{i18n>label134}"/>
+                                 <m:Text text = "{tileJSONModel>/SettlementReservation}"/>
+                                  <m:Label text="{i18n>label135}"/>
+                                 <m:Text text = "{tileJSONModel>/SettlementReservationItem}"/>
+                                  <m:Label text="{i18n>label136}"/>
+                                 <m:Text text = "{tileJSONModel>/PFMTransDataFootprintUUID}"/>
+                                  <m:Label text="{i18n>label137}"/>
+                                 <m:Text text = "{tileJSONModel>/IsOutline}"/>
+                                  <m:Label text="{i18n>label138}"/>
+                                 <m:Text text = "{tileJSONModel>/PurchasingParentItem}"/>
+                                  <m:Label text="{i18n>label139}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnItemOutlineType}"/>
+                                  <m:Label text="{i18n>label140}"/>
+                                 <m:Text text = "{tileJSONModel>/PurgConfigurableItemNumber}"/>
+                                  <m:Label text="{i18n>label141}"/>
+                                 <m:Text text = "{tileJSONModel>/PurgExternalSortNumber}"/>
+                                  <m:Label text="{i18n>label142}"/>
+                                 <m:Text text = "{tileJSONModel>/CntrlReqnIsRpldBfrApprvl}"/>
+                                  <m:Label text="{i18n>label143}"/>
+                                 <m:Text text = "{tileJSONModel>/CntrlReqnApprvlStsInRpldReqn}"/>
+                                  <m:Label text="{i18n>label144}"/>
+                                 <m:Text text = "{tileJSONModel>/PurReqnHasDelegateApproval}"/>
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+ </ObjectPageSubSection>
+
+                </subSections>
+            </ObjectPageSection>
+
+        </sections>
+        <!-- <footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button text="{i18n>Btn1}" press="onSavePress" />
+					<m:Button text="{i18n>Btn2}" press="onSaveAsDraftPress" />
+				</m:contentRight>
+			</m:Bar>
+		</footer> -->
+	</ObjectPageLayout>
+
+</mvc:View>

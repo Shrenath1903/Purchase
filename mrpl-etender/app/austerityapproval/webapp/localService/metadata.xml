@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://mrd:8000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZC_MM_PURREQ_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="I_CurrencyType" sap:label="Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="UpperCase" sap:text="Currency_Text" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="Currency_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Decimals" Type="Edm.Byte" sap:label="Decimal Places" sap:quickinfo="Number of decimal places"/>
+                <Property Name="CurrencyISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="ISO Code" sap:quickinfo="ISO Currency Code"/>
+                <Property Name="AlternativeCurrencyKey" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Alternative Key"/>
+                <Property Name="IsPrimaryCurrencyForISOCrcy" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary" sap:quickinfo="Primary SAP Currency Code for ISO Code"/>
+            </EntityType>
+            <EntityType Name="I_PurchaserequisitionType" sap:label="Purchase Requisition Header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PurchaseRequisition"/>
+                </Key>
+                <Property Name="PurchaseRequisition" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchase Requisition" sap:quickinfo="Purchase Requisition Number" sap:value-list="standard"/>
+                <Property Name="PurReqnDescription" Type="Edm.String" MaxLength="40" sap:label="PurReqn Description" sap:quickinfo="Purchase Requisition Description"/>
+                <Property Name="PurReqnSSPRequestor" Type="Edm.String" MaxLength="60" sap:label="Requestor"/>
+                <Property Name="PurReqnSSPAuthor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Author" sap:quickinfo="Author of Requisition"/>
+                <Property Name="PurReqnOrigin" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Creation indicator" sap:quickinfo="Creation indicator (purchase requisition/schedule lines)"/>
+                <Property Name="PurchaseRequisitionType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Document Type" sap:quickinfo="Purchase Requisition Document Type"/>
+                <Property Name="IsPurReqnOvrlRel" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Overall req. rel." sap:quickinfo="Overall release of purchase requisitions"/>
+                <Property Name="PurReqnIsCreatedInExpertMode" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="PR in Expert Mode" sap:quickinfo="PR Created in Expert Mode"/>
+                <Property Name="IsOnBehalfCart" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Shop On Behalf Ind." sap:quickinfo="Shop on behalf indicator"/>
+                <Property Name="PurReqnRequestor" Type="Edm.String" MaxLength="60" sap:label="Requestor"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <NavigationProperty Name="to_PurchaseRequisition" Relationship="ZC_MM_PURREQ_CDS.assoc_5DE4850967AD97A61456CB3B7C5B40EB" FromRole="FromRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB" ToRole="ToRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureType" sap:label="Unit of Measure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasure"/>
+                </Key>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="UnitOfMeasure_Text" sap:label="Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="UnitOfMeasure_Text" Type="Edm.String" MaxLength="30" sap:label="Measurement Unit Txt" sap:quickinfo="Unit of Measurement Text (Maximum 30 Characters)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="UnitOfMeasureSAPCode" Type="Edm.String" MaxLength="3" sap:label="Internal SAP Code" sap:quickinfo="Unit of Measurement, Internal SAP Code (No Conversion)"/>
+                <Property Name="UnitOfMeasureISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:text="to_ISOCode/UnitOfMeasureISOCode_Text" sap:label="ISO Code" sap:quickinfo="ISO Code for Unit of Measurement" sap:value-list="standard"/>
+                <Property Name="IsPrimaryUnitForISOCode" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary code" sap:quickinfo="Selection field for conversion from ISO code to int. code"/>
+                <Property Name="UnitOfMeasureNumberOfDecimals" Type="Edm.Int16" sap:label="Decimal Rounding" sap:quickinfo="No. of decimal places for rounding"/>
+                <Property Name="UnitOfMeasureIsCommercial" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Commercial meas.unit" sap:quickinfo="Commercial measurement unit ID"/>
+                <Property Name="UnitOfMeasureDimension" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:text="to_Dimension/UnitOfMeasureDimension_Text" sap:label="Dimension" sap:quickinfo="Dimension key" sap:value-list="standard"/>
+                <Property Name="SIUnitCnvrsnRateNumerator" Type="Edm.Int32" sap:label="Numerator" sap:quickinfo="Numerator for conversion to SI unit"/>
+                <Property Name="SIUnitCnvrsnRateDenominator" Type="Edm.Int32" sap:label="Denominator" sap:quickinfo="Denominator for conversion into SI unit"/>
+                <Property Name="SIUnitCnvrsnRateExponent" Type="Edm.Int16" sap:label="Exponent" sap:quickinfo="base ten exponent for conversion to SI unit"/>
+                <Property Name="SIUnitCnvrsnAdditiveValue" Type="Edm.Decimal" Precision="9" Scale="6" sap:label="Additive constant" sap:quickinfo="Additive constant for conversion to SI unit"/>
+                <Property Name="UnitOfMeasureDspExponent" Type="Edm.Int16" sap:label="Exp. 10 Floating Pt" sap:quickinfo="Exponent of 10 for Floating Point Format"/>
+                <Property Name="UnitOfMeasureDspNmbrOfDcmls" Type="Edm.Int16" sap:label="Decimal Places" sap:quickinfo="Number of Decimal Places for Number Display"/>
+                <Property Name="UnitOfMeasureTemperature" Type="Edm.Double" sap:unit="UnitOfMeasureTemperatureUnit" sap:label="Temperature"/>
+                <Property Name="UnitOfMeasureTemperatureUnit" Type="Edm.String" MaxLength="3" sap:label="Temperature unit" sap:semantics="unit-of-measure"/>
+                <Property Name="UnitOfMeasurePressure" Type="Edm.Double" sap:unit="UnitOfMeasurePressureUnit" sap:label="Pressure Value"/>
+                <Property Name="UnitOfMeasurePressureUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Pressure" sap:semantics="unit-of-measure"/>
+                <NavigationProperty Name="to_Dimension" Relationship="ZC_MM_PURREQ_CDS.assoc_744267C89213C6F0BEAA53E2EB9C8F4F" FromRole="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F" ToRole="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <NavigationProperty Name="to_ISOCode" Relationship="ZC_MM_PURREQ_CDS.assoc_5E18390584266C106B459BC3FD3D3C50" FromRole="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50" ToRole="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureDimensionType" sap:label="Unit of Measure Dimension" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasureDimension"/>
+                </Key>
+                <Property Name="UnitOfMeasureDimension" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:text="UnitOfMeasureDimension_Text" sap:label="Dimension" sap:quickinfo="Dimension key"/>
+                <Property Name="UnitOfMeasureDimension_Text" Type="Edm.String" MaxLength="20" sap:label="Dimension text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LengthExponent" Type="Edm.Int16" sap:label="Length" sap:quickinfo="Length exponent"/>
+                <Property Name="MassExponent" Type="Edm.Int16" sap:label="Mass" sap:quickinfo="Mass exponent"/>
+                <Property Name="TimeExponent" Type="Edm.Int16" sap:label="Time" sap:quickinfo="Current exponent"/>
+                <Property Name="ElectricCurrentExponent" Type="Edm.Int16" sap:label="elec. current" sap:quickinfo="Electric current exponent"/>
+                <Property Name="TemperatureExponent" Type="Edm.Int16" sap:label="Temperature" sap:quickinfo="Temperature exponent"/>
+                <Property Name="MoleQuantityExponent" Type="Edm.Int16" sap:label="Mole quantity" sap:quickinfo="Mole quantity exponent"/>
+                <Property Name="LuminosityExponent" Type="Edm.Int16" sap:label="Luminous intensity" sap:quickinfo="Luminosity exponent"/>
+                <Property Name="UnitOFMeasureSiUnit" Type="Edm.String" MaxLength="3" sap:label="SI unit" sap:semantics="unit-of-measure"/>
+                <Property Name="HasUnitsWithTemperatureSpec" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Temperature-Depend." sap:quickinfo="Indicator: Dimension has Unit with Temperature Specification"/>
+                <Property Name="HasUnitsWithPressureSpec" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Pressure-Dependent" sap:quickinfo="Indicator: Dimension has Units with Pressure Specification"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureISOCodeType" sap:label="Unit of Measure ISO Code" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasureISOCode"/>
+                </Key>
+                <Property Name="UnitOfMeasureISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:text="UnitOfMeasureISOCode_Text" sap:label="ISO Code" sap:quickinfo="ISO Code for Unit of Measurement"/>
+                <Property Name="UnitOfMeasureISOCode_Text" Type="Edm.String" MaxLength="25" sap:label="ISO code" sap:quickinfo="ISO codes for measurement unit names" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZC_MM_PURREQType" sap:label="Purchase Requsition" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PurchaseRequisition"/>
+                </Key>
+                <Property Name="PurchaseRequisition" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchase Requisition" sap:quickinfo="Purchase Requisition Number"/>
+                <Property Name="PurReqnDescription" Type="Edm.String" MaxLength="40" sap:label="PurReqn Description" sap:quickinfo="Purchase Requisition Description"/>
+                <Property Name="PurchaseRequisitionType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Document Type" sap:quickinfo="Purchase Requisition Document Type"/>
+                <Property Name="PurchasingDocumentCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purch. Doc. Category" sap:quickinfo="Purchasing Document Category"/>
+                <Property Name="PurchasingDocumentSubtype" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Control indicator" sap:quickinfo="Control indicator for purchasing document type"/>
+                <Property Name="IsDeleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deletion Indicator" sap:quickinfo="Deletion Indicator in Purchasing Document"/>
+                <Property Name="ProcessingStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Processing status" sap:quickinfo="Processing status of purchase requisition"/>
+                <Property Name="PurReqnOrigin" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Creation indicator" sap:quickinfo="Creation indicator (purchase requisition/schedule lines)"/>
+                <Property Name="ReleaseCode" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Release indicator" sap:quickinfo="Release Indicator"/>
+                <Property Name="PurchaseRequisitionStatus" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Release State"/>
+                <Property Name="ReleaseStrategy" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Release strategy" sap:quickinfo="Release strategy in the purchase requisition"/>
+                <Property Name="PurchasingGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object"/>
+                <Property Name="LastChangedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Last Changed On"/>
+                <Property Name="RequisitionerName" Type="Edm.String" MaxLength="12" sap:label="Requisitioner" sap:quickinfo="Name of requisitioner/requester"/>
+                <Property Name="PurchaseRequisitionItemText" Type="Edm.String" MaxLength="40" sap:label="Short Text"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="ManufacturerMaterial" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="MPN material" sap:quickinfo="Material number corresponding to manufacturer part number"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/>
+                <Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage Location"/>
+                <Property Name="RequirementTracking" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Req. Tracking Number" sap:quickinfo="Requirement Tracking Number"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Material Group"/>
+                <Property Name="SupplyingPlant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Supplying Plant" sap:quickinfo="Supplying (issuing) plant in case of stock transport order"/>
+                <Property Name="RequestedQuantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="BaseUnit" sap:label="Quantity requested" sap:quickinfo="Purchase requisition quantity"/>
+                <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:text="to_UnitOfMeasure/UnitOfMeasure_Text" sap:label="Unit of Measure" sap:quickinfo="Purchase requisition unit of measure" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialShortageQuantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Shortage quantity" sap:quickinfo="Shortage (stock undercoverage) quantity"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Requisition date" sap:quickinfo="Requisition (request) date"/>
+                <Property Name="CreationTime" Type="Edm.Time" Precision="0" sap:label="Creation Time" sap:quickinfo="Purchasing Document Creation Time"/>
+                <Property Name="PurReqCreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Requisition date" sap:quickinfo="Requisition (request) date"/>
+                <Property Name="DelivDateCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deliv. date category" sap:quickinfo="Category of delivery date"/>
+                <Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Delivery Date" sap:quickinfo="Item Delivery Date"/>
+                <Property Name="PurchaseRequisitionReleaseDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Release Date" sap:quickinfo="Purchase Requisition Release Date"/>
+                <Property Name="MaterialGoodsReceiptDuration" Type="Edm.Decimal" Precision="3" Scale="0" sap:label="GR processing time" sap:quickinfo="Goods receipt processing time in days"/>
+                <Property Name="PurchaseRequisitionPrice" Type="Edm.Decimal" Precision="12" Scale="3" sap:unit="PurReqnItemCurrency" sap:label="Valuation Price" sap:quickinfo="Price in Purchase Requisition"/>
+                <Property Name="PurReqnPriceQuantity" Type="Edm.Decimal" Precision="5" Scale="0" sap:unit="BaseUnit" sap:label="Price unit"/>
+                <Property Name="PurchasingDocumentItemCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Item Category" sap:quickinfo="Item category in purchasing document"/>
+                <Property Name="AccountAssignmentCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Acct Assignment Cat." sap:quickinfo="Account Assignment Category"/>
+                <Property Name="ConsumptionPosting" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Consumption" sap:quickinfo="Consumption posting"/>
+                <Property Name="MultipleAcctAssgmtDistribution" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Distrib. Indicator" sap:quickinfo="Distribution Indicator for Multiple Account Assignment"/>
+                <Property Name="PartialInvoiceDistribution" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Partial invoice" sap:quickinfo="Partial invoice indicator"/>
+                <Property Name="GoodsReceiptIsExpected" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Goods Receipt" sap:quickinfo="Goods Receipt Indicator"/>
+                <Property Name="GoodsReceiptIsNonValuated" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="GR non-valuated" sap:quickinfo="Goods Receipt, Non-Valuated"/>
+                <Property Name="InvoiceIsExpected" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Invoice Receipt" sap:quickinfo="Invoice Receipt Indicator"/>
+                <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Desired Vendor"/>
+                <Property Name="FixedSupplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fixed Vendor"/>
+                <Property Name="PurchasingOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purch. Organization" sap:quickinfo="Purchasing Organization"/>
+                <Property Name="PurReqnSourceOfSupplyType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purch. Doc. Category" sap:quickinfo="Purchasing Document Category"/>
+                <Property Name="PurchaseContract" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Outline agreement" sap:quickinfo="Number of principal purchase agreement"/>
+                <Property Name="PurchaseContractItem" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Agreement Item" sap:quickinfo="Item Number of Principal Purchase Agreement"/>
+                <Property Name="PurchasingInfoRecord" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing info rec." sap:quickinfo="Number of purchasing info record"/>
+                <Property Name="SourceOfSupplyIsAssigned" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Assigned" sap:quickinfo="Assigned Source of Supply"/>
+                <Property Name="MRPController" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="MRP Controller"/>
+                <Property Name="PurchasingDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchase order" sap:quickinfo="Purchase order number"/>
+                <Property Name="PurchasingDocumentItem" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Purchase Order Item" sap:quickinfo="Purchase order item number"/>
+                <Property Name="PurchaseOrderDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Purchase Order Date"/>
+                <Property Name="OrderedQuantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="BaseUnit" sap:label="Quantity ordered" sap:quickinfo="Quantity ordered against this purchase requisition"/>
+                <Property Name="PurReqnLimitConsumptionAmt" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="PurReqnItemCurrency" sap:label="Consumption Value" sap:quickinfo="Consumption Value for Limit Items"/>
+                <Property Name="IsClosed" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Closed" sap:quickinfo="Purchase requisition closed"/>
+                <Property Name="Reservation" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Reservation" sap:quickinfo="Number of reservation/dependent requirements"/>
+                <Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Special Stock" sap:quickinfo="Special Stock Indicator"/>
+                <Property Name="PurchaseRequisitionIsFixed" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="&quot;Fixed&quot; indicator" sap:quickinfo="Purchase requisition is fixed"/>
+                <Property Name="MaterialOrderUnit" Type="Edm.String" MaxLength="3" sap:label="Order Unit" sap:quickinfo="Purchase Order Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialRevisionLevel" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Revision Level"/>
+                <Property Name="PurchaseOrderPriceType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purchase order price" sap:quickinfo="Use Requisition Price in Purchase Order"/>
+                <Property Name="ReleaseGroup" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Release group"/>
+                <Property Name="ReleaseIsNotCompleted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Subject to Release" sap:quickinfo="Release Not Yet Completely Effected"/>
+                <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Batch" sap:quickinfo="Batch Number"/>
+                <Property Name="CommitmentItemShortID" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="Commitment Item Short ID"/>
+                <Property Name="FundsCenter" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Funds Center"/>
+                <Property Name="Fund" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fund"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address" sap:quickinfo="Manual address number in purchasing document item"/>
+                <Property Name="ManualDeliveryAddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address" sap:quickinfo="Manual address number in purchasing document item"/>
+                <Property Name="ItemDeliveryAddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address" sap:quickinfo="Number of delivery address"/>
+                <Property Name="PurReqnReceivingCustomer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer"/>
+                <Property Name="Subcontractor" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier" sap:quickinfo="Supplier to be Supplied/Who is to Receive Delivery"/>
+                <Property Name="PurReqnItemCurrency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:text="to_Currency/Currency_Text" sap:label="Currency" sap:quickinfo="Currency Key" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="SupplierMaterialNumber" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Supplier Mat. No." sap:quickinfo="Material Number Used by Supplier"/>
+                <Property Name="IsPurReqnOvrlRel" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Overall req. rel." sap:quickinfo="Overall release of purchase requisitions"/>
+                <Property Name="ManufacturerPartProfile" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Mfr part profile"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="ManufacturerPartNmbr" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Mfr Part Number" sap:quickinfo="Manufacturer Part Number"/>
+                <Property Name="MaterialPlannedDeliveryDurn" Type="Edm.Decimal" Precision="3" Scale="0" sap:label="Planned Deliv. Time" sap:quickinfo="Planned Delivery Time in Days"/>
+                <Property Name="MRPArea" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="MRP Area"/>
+                <Property Name="TaxCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax Code" sap:quickinfo="Tax on sales/purchases code"/>
+                <Property Name="FunctionalArea" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Functional Area"/>
+                <Property Name="GrantID" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Grant"/>
+                <Property Name="IsPurReqnCmplt" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Incomplete" sap:quickinfo="Purchase Requisition not yet Complete"/>
+                <Property Name="PurReqnReleaseStatus" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Proc.state" sap:quickinfo="Requisition Processing State"/>
+                <Property Name="IsPurReqnBlocked" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Blocking Indicator" sap:quickinfo="Purchase Requisition Blocked"/>
+                <Property Name="PurReqnItemBlockingReasonText" Type="Edm.String" MaxLength="60" sap:label="Blocking Text" sap:quickinfo="Reason for Item Block"/>
+                <Property Name="ProcuringPlant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Procuring Plant"/>
+                <Property Name="ExternalProcurementProfile" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Procurement profile" sap:quickinfo="External Procurement Profile"/>
+                <Property Name="EarmarkedFundsDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Earmarked Funds" sap:quickinfo="Document Number for Earmarked Funds"/>
+                <Property Name="EarmarkedFundsDocumentItem" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Document Item" sap:quickinfo="Earmarked Funds: Document Item"/>
+                <Property Name="PurReqnCmpltnsCat" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Incompleteness" sap:quickinfo="Category of Incompleteness"/>
+                <Property Name="MinRemainingShelfLife" Type="Edm.Decimal" Precision="4" Scale="0" sap:label="Min. Rem. Shelf Life" sap:quickinfo="Minimum Remaining Shelf Life"/>
+                <Property Name="BudgetPeriod" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Budget Period"/>
+                <Property Name="PurReqnIsCreatedInExpertMode" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="PR in Expert Mode" sap:quickinfo="PR Created in Expert Mode"/>
+                <Property Name="PurReqnIsValdInCntrlReqnProcg" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Central PR Procg." sap:quickinfo="Is PR relevant for Central PR Processing"/>
+                <Property Name="ProductTypeCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Product Type Group"/>
+                <Property Name="ServicePerformer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Service Performer"/>
+                <Property Name="IsEndOfPurposeBlocked" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Busin. Purp. Cmpltd." sap:quickinfo="Business Purpose Completed"/>
+                <Property Name="PerformancePeriodStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start Date" sap:quickinfo="Start Date for Period of Performance"/>
+                <Property Name="PerformancePeriodEndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="End Date" sap:quickinfo="End Date for Period of Performance"/>
+                <Property Name="ExtMaterialForPurg" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material of External System"/>
+                <Property Name="ExtFixedSupplierForPurg" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fixed Supplier" sap:quickinfo="Fixed Supplier of External System"/>
+                <Property Name="ExtDesiredSupplierForPurg" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Desired Supplier" sap:quickinfo="Desired Supplier of External System"/>
+                <Property Name="ExtContractForPurg" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Contract" sap:quickinfo="Contract of External System"/>
+                <Property Name="ExtContractItemForPurg" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Contract Item" sap:quickinfo="Contract Item of External System"/>
+                <Property Name="ExtInfoRecordForPurg" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Info Record" sap:quickinfo="Info Record of External System"/>
+                <Property Name="ExtPlantForPurg" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant" sap:quickinfo="Plant of External System"/>
+                <Property Name="ProcmtHubStorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage Location" sap:quickinfo="Storage Location of External System"/>
+                <Property Name="ExtCompanyCodeForPurg" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code" sap:quickinfo="Company Code of External System"/>
+                <Property Name="ExtPurgOrgForPurg" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purch. Organization" sap:quickinfo="Purchasing Organization"/>
+                <Property Name="ExtSourceSystem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Logical System"/>
+                <Property Name="ProcurementHubSourceSystem" Type="Edm.String" MaxLength="10" sap:label="Connected System ID"/>
+                <Property Name="ProcmtHubPurReqnItmIsChanged" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="PR Change Indicator" sap:quickinfo="Change Indicator for PR in Central Procurement"/>
+                <Property Name="ExtPurchaseRequisitionType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="PR DocTyp of ConnSys" sap:quickinfo="PR Document Type of Connected System"/>
+                <Property Name="ExternalApprovalStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Ext Prcsng. Status" sap:quickinfo="External Processing Status"/>
+                <Property Name="ExtApprvlIntmdSts" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Intmd Ext Apprvl Sts" sap:quickinfo="Intermediate External Approval Status"/>
+                <Property Name="PurchaseReqnItemUniqueID" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="PR Item" sap:quickinfo="Key to identify purchase requisition item"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp" sap:quickinfo="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+                <Property Name="IsOnBehalfCart" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Shop On Behalf Ind." sap:quickinfo="Shop on behalf indicator"/>
+                <Property Name="GLAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="G/L Account" sap:quickinfo="G/L Account Number"/>
+                <Property Name="CostCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Center"/>
+                <Property Name="ExpectedOverallLimitAmount" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="PurReqnItemCurrency" sap:label="Expected Value" sap:quickinfo="Expected Value of Overall Limit"/>
+                <Property Name="OverallLimitAmount" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="PurReqnItemCurrency" sap:label="Overall Limit"/>
+                <Property Name="PurContractForOverallLimit" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Contract for Limit" sap:quickinfo="Purchase Contract for Enhanced Limit"/>
+                <Property Name="PurReqnIntObjNmbr" Type="Edm.String" MaxLength="18" sap:display-format="NonNegative" sap:label="Internal object no." sap:quickinfo="Configuration (internal object number)"/>
+                <Property Name="ProductSeasonYear" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Season Year"/>
+                <Property Name="ProductSeason" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Season"/>
+                <Property Name="ProductCollection" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Collection" sap:quickinfo="Fashion Collection"/>
+                <Property Name="ProductTheme" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Theme" sap:quickinfo="Fashion Theme"/>
+                <Property Name="PurReqnSSPCrossCatalogItem" Type="Edm.Int32" sap:label="Catalog Item Key"/>
+                <Property Name="PurReqnSSPCatalog" Type="Edm.String" MaxLength="20" sap:label="Web Service ID" sap:quickinfo="Technical Key of a Web Service (for Example - a Catalog)"/>
+                <Property Name="PurReqnSSPCatalogItem" Type="Edm.String" MaxLength="40" sap:label="Catalog Item" sap:quickinfo="Catalog Item Id"/>
+                <Property Name="PurReqnSSPRequestor" Type="Edm.String" MaxLength="60" sap:label="Requestor"/>
+                <Property Name="PurReqnSSPAuthor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Author" sap:quickinfo="Author of Requisition"/>
+                <Property Name="StockSegment" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Stock Segment"/>
+                <Property Name="RequirementSegment" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Requirement Segment"/>
+                <Property Name="PurchasingDeliveryAddressType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Delivery Addr Type" sap:quickinfo="Purchasing Delivery Address Type"/>
+                <Property Name="SettlementReservation" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Settlement res. no." sap:quickinfo="Settlement reservation number"/>
+                <Property Name="SettlementReservationItem" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Item settlem.reser." sap:quickinfo="Item number of the settlement reservation"/>
+                <Property Name="PFMTransDataFootprintUUID" Type="Edm.Guid" sap:label="Transaction Data Footprint"/>
+                <Property Name="IsOutline" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Outline"/>
+                <Property Name="PurchasingParentItem" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Parent Item No"/>
+                <Property Name="PurReqnItemOutlineType" Type="Edm.String" MaxLength="1" sap:label="Outline Type"/>
+                <Property Name="PurgConfigurableItemNumber" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Hierarchy Number"/>
+                <Property Name="PurgExternalSortNumber" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="External Sort No." sap:quickinfo="External Sort Number"/>
+                <Property Name="CntrlReqnIsRpldBfrApprvl" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Rplctn Bfr Apprvl" sap:quickinfo="Is Replication Before Approval"/>
+                <Property Name="CntrlReqnApprvlStsInRpldReqn" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Approval Sts. in Hub" sap:quickinfo="Approval Status of Purchase Requisition in Hub"/>
+                <Property Name="PurReqnHasDelegateApproval" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="PurReq Ext. approval" sap:quickinfo="Purchase Requisition in external approval"/>
+                <NavigationProperty Name="to_Currency" Relationship="ZC_MM_PURREQ_CDS.assoc_A20C5373ED486EF89EEBA698F5C4930E" FromRole="FromRole_assoc_A20C5373ED486EF89EEBA698F5C4930E" ToRole="ToRole_assoc_A20C5373ED486EF89EEBA698F5C4930E"/>
+                <NavigationProperty Name="to_PurchaseRequisition" Relationship="ZC_MM_PURREQ_CDS.assoc_B2E725A2BDB622CDEF99F5B9165FD3EF" FromRole="FromRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF" ToRole="ToRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF"/>
+                <NavigationProperty Name="to_UnitOfMeasure" Relationship="ZC_MM_PURREQ_CDS.assoc_C35EB66EAE5A672A24D14A8DFD62BCDB" FromRole="FromRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB" ToRole="ToRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB"/>
+            </EntityType>
+            <Association Name="assoc_744267C89213C6F0BEAA53E2EB9C8F4F" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType" Multiplicity="1" Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_UnitOfMeasureDimensionType" Multiplicity="0..1" Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F">
+                        <PropertyRef Name="UnitOfMeasureDimension"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F">
+                        <PropertyRef Name="UnitOfMeasureDimension"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_5E18390584266C106B459BC3FD3D3C50" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType" Multiplicity="1" Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_UnitOfMeasureISOCodeType" Multiplicity="0..1" Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50">
+                        <PropertyRef Name="UnitOfMeasureISOCode"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50">
+                        <PropertyRef Name="UnitOfMeasureISOCode"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_5DE4850967AD97A61456CB3B7C5B40EB" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.I_PurchaserequisitionType" Multiplicity="1" Role="FromRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_PurchaserequisitionType" Multiplicity="1" Role="ToRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB">
+                        <PropertyRef Name="PurchaseRequisition"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB">
+                        <PropertyRef Name="PurchaseRequisition"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_A20C5373ED486EF89EEBA698F5C4930E" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType" Multiplicity="1" Role="FromRole_assoc_A20C5373ED486EF89EEBA698F5C4930E"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_A20C5373ED486EF89EEBA698F5C4930E"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_A20C5373ED486EF89EEBA698F5C4930E">
+                        <PropertyRef Name="Currency"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_A20C5373ED486EF89EEBA698F5C4930E">
+                        <PropertyRef Name="PurReqnItemCurrency"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_B2E725A2BDB622CDEF99F5B9165FD3EF" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType" Multiplicity="1" Role="FromRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_PurchaserequisitionType" Multiplicity="1" Role="ToRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF"/>
+            </Association>
+            <Association Name="assoc_C35EB66EAE5A672A24D14A8DFD62BCDB" sap:content-version="1">
+                <End Type="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType" Multiplicity="1" Role="FromRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB"/>
+                <End Type="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType" Multiplicity="1" Role="ToRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB">
+                        <PropertyRef Name="UnitOfMeasure"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB">
+                        <PropertyRef Name="BaseUnit"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZC_MM_PURREQ_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_Currency" EntityType="ZC_MM_PURREQ_CDS.I_CurrencyType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Purchaserequisition" EntityType="ZC_MM_PURREQ_CDS.I_PurchaserequisitionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasure" EntityType="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasureDimension" EntityType="ZC_MM_PURREQ_CDS.I_UnitOfMeasureDimensionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasureISOCode" EntityType="ZC_MM_PURREQ_CDS.I_UnitOfMeasureISOCodeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZC_MM_PURREQ" EntityType="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_5E18390584266C106B459BC3FD3D3C50" Association="ZC_MM_PURREQ_CDS.assoc_5E18390584266C106B459BC3FD3D3C50" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_UnitOfMeasure" Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                    <End EntitySet="I_UnitOfMeasureISOCode" Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A20C5373ED486EF89EEBA698F5C4930E" Association="ZC_MM_PURREQ_CDS.assoc_A20C5373ED486EF89EEBA698F5C4930E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_MM_PURREQ" Role="FromRole_assoc_A20C5373ED486EF89EEBA698F5C4930E"/>
+                    <End EntitySet="I_Currency" Role="ToRole_assoc_A20C5373ED486EF89EEBA698F5C4930E"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_5DE4850967AD97A61456CB3B7C5B40EB" Association="ZC_MM_PURREQ_CDS.assoc_5DE4850967AD97A61456CB3B7C5B40EB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_Purchaserequisition" Role="FromRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB"/>
+                    <End EntitySet="I_Purchaserequisition" Role="ToRole_assoc_5DE4850967AD97A61456CB3B7C5B40EB"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_B2E725A2BDB622CDEF99F5B9165FD3EF" Association="ZC_MM_PURREQ_CDS.assoc_B2E725A2BDB622CDEF99F5B9165FD3EF" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_MM_PURREQ" Role="FromRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF"/>
+                    <End EntitySet="I_Purchaserequisition" Role="ToRole_assoc_B2E725A2BDB622CDEF99F5B9165FD3EF"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_744267C89213C6F0BEAA53E2EB9C8F4F" Association="ZC_MM_PURREQ_CDS.assoc_744267C89213C6F0BEAA53E2EB9C8F4F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_UnitOfMeasure" Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                    <End EntitySet="I_UnitOfMeasureDimension" Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C35EB66EAE5A672A24D14A8DFD62BCDB" Association="ZC_MM_PURREQ_CDS.assoc_C35EB66EAE5A672A24D14A8DFD62BCDB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_MM_PURREQ" Role="FromRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB"/>
+                    <End EntitySet="I_UnitOfMeasure" Role="ToRole_assoc_C35EB66EAE5A672A24D14A8DFD62BCDB"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_PurchaserequisitionType/PurchaseRequisition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Purchase Requisition Header"/>
+                        <PropertyValue Property="CollectionPath" String="I_Purchaserequisition"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PurchaseRequisition"/>
+                                    <PropertyValue Property="ValueListProperty" String="PurchaseRequisition"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType/UnitOfMeasureISOCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure ISO Code"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasureISOCode"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnitOfMeasureISOCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureISOCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureISOCode_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType/UnitOfMeasureDimension" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure Dimension"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasureDimension"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnitOfMeasureDimension"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureDimension"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureDimension_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType/BaseUnit" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasure"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BaseUnit"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQType/PurReqnItemCurrency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency"/>
+                        <PropertyValue Property="CollectionPath" String="I_Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PurReqnItemCurrency"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Currency_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQ_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQ_CDS_Entities/I_Purchaserequisition" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_PurchaseRequisition"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQ_CDS_Entities/I_UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Dimension"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_ISOCode"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.ZC_MM_PURREQ_CDS_Entities/ZC_MM_PURREQ" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Currency"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_PurchaseRequisition"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_UnitOfMeasure"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_CurrencyType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SAPObjectNodeType">
+                    <Record>
+                        <PropertyValue Property="Name" String="Currency"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_CurrencyType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.UnitSpecificScale" Path="Decimals"/>
+            </Annotations>
+            <Annotations Target="ZC_MM_PURREQ_CDS.I_UnitOfMeasureType/UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.UnitSpecificScale" Path="UnitOfMeasureDspNmbrOfDcmls"/>
+            </Annotations>
+            <atom:link rel="self" href="http://mrd:8000/sap/opu/odata/sap/ZC_MM_PURREQ_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://mrd:8000/sap/opu/odata/sap/ZC_MM_PURREQ_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,158 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	controllerName="mrpl.etender.singlecertificatetender.controller.sctForm"
+	height="100%">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+				</headerTitle>
+		<headerContent>
+                   <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+		<sections>
+             <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>sectionTitle1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>labelText1}"/>
+                                <m:Input/>
+                                                              
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                         <ObjectPageSection titleUppercase="false" id="Employmsent" title="{i18n>sectionTitle2}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+ <m:VBox>
+        <m:CheckBox text="{i18n>labelText2}" />
+
+        <m:CheckBox text="{i18n>labelText3}" />
+        <m:Input />
+
+        <m:CheckBox text="{i18n>labelText4}" />
+
+        <m:CheckBox text="{i18n>labelText5}" />
+        <m:Input/>
+
+        <m:CheckBox text="{i18n>labelText6}"/>
+        <m:Input/>
+
+        <m:Text text="{i18n>labelText7}" />
+        <m:Input/>
+         <m:Text text="{i18n>labelText8}" />
+        <m:Input/>
+         <m:Text text="{i18n>labelText9}" />
+
+          <m:Text text="{i18n>labelText10}" />
+          
+   </m:VBox>
+
+
+
+
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+ 
+                        <ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>sectionTitle3}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>labelText11}"/>
+<m:TextArea/>
+
+                               
+                               
+                               
+                               
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+                
+
+            <ObjectPageSection titleUppercase="false" id="Tabtitle" title="{i18n>sectionTitle4}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<m:ScrollContainer
+	id="idScrollContainer"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTable"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName1}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName5}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName6}" />
+</m:Column>
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Test-AuthLevel" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reamrk" />
+
+</m:cells>
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+ </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+            
+        </sections>
+        <footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button text="{i18n>fBtn1}" press="onSavePress" />
+					<m:Button text="{i18n>fBtn2}" press="onSaveAsDraftPress" />
+				</m:contentRight>
+			</m:Bar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>
