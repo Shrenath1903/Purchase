@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        title="Purchase Requisition"
+        afterClose=".onValueHelpClose">
+        <List
+            mode="SingleSelectLeft"
+            items="{/ZC_MM_PURREQ}"
+            includeItemInSelection="true"
+            selectionChange=".onPurchaseRequisitionChange">
+            <StandardListItem
+                title="{PurchaseRequisition}"/>
+        </List>
+        <endButton>
+            <Button text="Close" press="onRequisitionclose" />
+        </endButton>
+        
+    </Dialog>
+</core:FragmentDefinition>

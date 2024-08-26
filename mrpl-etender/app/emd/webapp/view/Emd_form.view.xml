@@ -1,0 +1,421 @@
+<mvc:View controllerName="mrpl.etender.emd.controller.Emd_form"
+ displayBlock="true"
+
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+
+<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+			
+		</headerTitle>
+
+		<headerContent>
+			 <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection titleUppercase="false" id="Employment" title="section-1">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>pr_no}"/>
+								<m:Input/>
+								<m:Label text="{i18n>purchase}"/>
+								<m:Input/>
+
+								<m:Label text="{i18n>iom_no}"/>
+								<m:Input />
+								<m:Label text="{i18n>indented_by}"/>
+								<m:Input />
+                                <m:Text text="{i18n>pr_amnt}"/>
+
+								<m:Label text="{i18n>group}"/>
+								<m:Input/>
+								<m:Label text="{i18n>emd_date}"/>
+								<m:Input />
+								<m:Label text="{i18n>header_Text}"/>
+								<m:Input />
+
+								
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>tender_details}">
+				
+					<ObjectPageSubSection titleUppercase="false">
+
+                            <m:ScrollContainer
+                            id="idScrollContainer"
+                            width="100%"
+                            height="auto"
+                            horizontal="true"
+                            vertical="false">
+                            <m:Table id="idProductsTable"
+                                inset="false"
+                                growing="true"
+                                growingScrollToLoad="true"
+                                items="">
+                                
+
+                                    <m:headerToolbar>
+        <m:Toolbar>
+            <m:content>
+                <!-- "+" Button -->
+                <m:Button text="+" type="Emphasized" press="onAddPress" />
+                <!-- "-" Button -->
+                <m:Button text="-" type="Emphasized" press="onRemovePress" />
+
+            </m:content>
+        </m:Toolbar>
+    </m:headerToolbar>
+
+
+                                <m:columns>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>si_no}" />
+                                        
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>vendor_code}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>vendor_name}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>rfq_no}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>rfq_date}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>emd_applicable}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>neft_dd_bg}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>dd_BG_no_net_utr_no}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>bg_dd_neft_rtgs_date}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>amount}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>currency}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>valid_upto}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>bank}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>fi_recv_date}" />
+                                    </m:Column>
+
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>print}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>send_EMD}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>release_emd}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>reason_for_emd_release}" />
+                                    </m:Column>
+                                    <m:Column width="12em">
+                                        <m:Text text="{i18n>po_no}" />
+                                    </m:Column>
+                                </m:columns>
+                               <m:items>
+                    <m:ColumnListItem vAlign="Middle">
+                        <m:cells>
+                            <m:ObjectIdentifier text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />  
+                            
+                            <!-- Checkbox for emd_applicable -->
+                            <m:CheckBox selected="{emd_applicable}" />
+                            
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />  
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            
+                            <!-- Checkbox for print -->
+                            <m:CheckBox selected="{print}" />
+                            
+                            <!-- Checkbox for send_EMD -->
+                            <m:CheckBox selected="{send_EMD}" />
+                            
+                            <!-- Checkbox for release_emd -->
+                            <m:CheckBox selected="{release_emd}" />
+                            
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />  
+                            <m:Text text="" />
+                            <m:Text text="" />
+                            <m:Text text="" />
+                        </m:cells>
+                    </m:ColumnListItem>
+
+
+                          <m:ColumnListItem vAlign="Middle">
+            <m:cells>
+                <m:ObjectIdentifier text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                
+                <!-- Checkbox for emd_applicable -->
+                <m:CheckBox selected="{emd_applicable}" />
+                
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                
+                <!-- Checkbox for print -->
+                <m:CheckBox selected="{print}" />
+                
+                <!-- Checkbox for send_EMD -->
+                <m:CheckBox selected="{send_EMD}" />
+                
+                <!-- Checkbox for release_emd -->
+                <m:CheckBox selected="{release_emd}" />
+                
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+            </m:cells>
+        </m:ColumnListItem>
+
+
+              <m:ColumnListItem vAlign="Middle">
+            <m:cells>
+                <m:ObjectIdentifier text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                
+                <!-- Checkbox for emd_applicable -->
+                <m:CheckBox selected="{emd_applicable}" />
+                
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+                
+                <!-- Checkbox for print -->
+                <m:CheckBox selected="{print}" />
+                
+                <!-- Checkbox for send_EMD -->
+                <m:CheckBox selected="{send_EMD}" />
+                
+                <!-- Checkbox for release_emd -->
+                <m:CheckBox selected="{release_emd}" />
+                
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />  
+                <m:Text text="" />
+                <m:Text text="" />
+                <m:Text text="" />
+            </m:cells>
+        </m:ColumnListItem>
+    </m:items>
+                            </m:Table>
+                        </m:ScrollContainer>
+
+					</ObjectPageSubSection>
+			
+			</ObjectPageSection>
+
+           <ObjectPageSection titleUppercase="false" id="Tabtitlee3" title="secton-3">
+    <subSections>
+        <ObjectPageSubSection titleUppercase="false">
+            <m:ScrollContainer
+                id="idScrollContainers3"
+                width="100%"
+                height="auto"
+                horizontal="true"
+                vertical="false">
+                
+                <m:Table id="idProductsTables3"
+                    inset="false"
+                    growing="true"
+                    growingScrollToLoad="true"
+                    items="">
+                    
+                    <m:columns>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>emp_code}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>emp_name}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>emp_designation}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>status}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>remarks}" />
+                        </m:Column>
+                   
+                    </m:columns>
+
+                    <!-- Row 1 -->
+                    <m:items>
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>s1}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+
+                        <!-- Row 2 -->
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                                            <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>s2}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                            </m:cells>
+                        </m:ColumnListItem>
+
+                                                <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                                            <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>s3}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                            </m:cells>
+                        </m:ColumnListItem>
+                        
+                        <!-- Add more rows as needed -->
+                    </m:items>
+                </m:Table>
+            </m:ScrollContainer>
+        </ObjectPageSubSection>
+    </subSections>
+</ObjectPageSection>
+
+          <ObjectPageSection titleUppercase="false" id="Tabtitlee" title="{i18n>remarks}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+							<f:content>
+								
+										<m:TextArea value="" maxLength="60" rows="4"  width="100%"/>
+								
+							</f:content>
+						</f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+
+            
+                                </sections>
+                                <footer>
+                                    <m:Bar>
+                                        <m:contentRight>
+                                            <m:Button text="{i18n>save}" press="onSavePress" />
+                                            <m:Button text="{i18n>print_emd}" press="onSaveAsDraftPress" />
+                                        </m:contentRight>
+                                    </m:Bar>
+                                </footer>
+                            </ObjectPageLayout>
+</mvc:View>

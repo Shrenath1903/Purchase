@@ -1,0 +1,296 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	controllerName="mrpl.etender.tenderdocument.controller.TenderDocument"
+	height="100%">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+				</headerTitle>
+		<headerContent>
+                   <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+		<sections>
+             <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>Header1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>TDlabel1}"/>
+                                <m:Input/>
+                                 <m:Label text="{i18n>TDlabel2}"/>
+                                <m:Input/>
+                                                              
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                         <ObjectPageSection titleUppercase="false" id="Employmsent" title="{i18n>Header7}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+  <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>TDlabel3}"/>
+                                <m:Input/>
+                                 <m:Label text="{i18n>TDlabel4}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  />   
+
+
+                                              <m:Label text="{i18n>TDlabel7}"/>
+                                <m:Input/>
+
+                                 <m:Label text="{i18n>TDlabel8}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  /> 
+
+                                <m:Label text="{i18n>TDlabel9}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  /> 
+
+                                <m:Label text="{i18n>TDlabel10}"/>
+                                <m:Input/>
+                                  <m:Label text="{i18n>TDlabel11}"/>
+                                <m:Input/>
+
+                                 <m:Label text="{i18n>TDlabel12}"/>
+                                <m:Input/>
+
+                                 <m:Label text="{i18n>TDlabel13}"/>
+                                <m:Input/>
+                                  <m:Label text="{i18n>TDlabel14}"/>
+                                <m:Input/>
+                                 <m:Label text="{i18n>TDlabel8}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  /> 
+                                 <m:Label text="{i18n>TDlabel15}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  />   
+                            </f:content>
+                        </f:SimpleForm>
+
+                     </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+ 
+                        <ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>Header2}">
+                 <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+  <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>TDlabel16}"/>
+                                <m:Input />
+
+                                <m:Text text="{i18n>TDlabel5}"/>
+                                <m:Input/>    
+                                <m:Text text="{i18n>TDlabel6}"  /> 
+                                  <m:Label text="{i18n>TDlabel17}"/>
+                                <m:Input/>
+
+                                 <m:Label text="{i18n>TDlabel18}"/>
+                                <m:Input />
+
+
+ <m:Label text="{i18n>TDlabel19}"/>
+                                <m:Input />
+                                <m:Label text="{i18n>TDlabel20}"/>
+                                <m:Input />
+                                <m:Label text="{i18n>TDlabel21}"/>
+                                <m:Input />
+                                <m:Label text="{i18n>TDlabel23}"/>
+                                <m:Input />
+                                 <m:Label text="{i18n>TDlabel24}"/>
+                                <m:Input />
+
+ <m:Label text="{i18n>TDlabel22}"/>
+                                <m:Input />
+
+
+                            </f:content>
+                        </f:SimpleForm>
+
+                     </ObjectPageSubSection>
+ 
+                
+ 
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="Emploe" title="{i18n>Header5}">
+                 <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+  <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>TDlabel25}"/>
+                                <m:Input />
+
+                                <m:Label text="{i18n>TDlabel26}"/>
+                                <m:Input/>    
+                                
+
+                                 <m:Label text="{i18n>TDlabel27}"/>
+                                <m:Input />
+                                <m:Label text="{i18n>TDlabel28}"/>
+                                <m:Input />
+
+
+ <m:Label text="{i18n>TDlabel22}"/>
+                                <m:Input />
+
+
+                            </f:content>
+                        </f:SimpleForm>
+
+                     </ObjectPageSubSection>
+ 
+                
+ 
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection titleUppercase="false" id="Emploee" title="{i18n>Header3}">
+                 <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+  <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>TDlabel29}"/>
+                                <m:Input />
+
+                                <m:Label text="{i18n>TDlabel30}"/>
+                                <m:Input/>    
+                                
+
+                                 <m:Label text="{i18n>TDlabel31}"/>
+                                <m:Input />
+                               
+
+                            </f:content>
+                        </f:SimpleForm>
+
+                     </ObjectPageSubSection>
+ 
+                
+ 
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="Emploee1" title="{i18n>Header4}">
+                 <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+  <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>TDlabel29}"/>
+                                <m:Input />
+
+                                <m:Label text="{i18n>TDlabel30}"/>
+                                <m:Input/>    
+                                
+<m:Label text="{i18n>TDlabel37}"/>
+                                <m:TextArea/> 
+                                 
+                            </f:content>
+                        </f:SimpleForm>
+
+                     </ObjectPageSubSection>
+ 
+                
+ 
+                </subSections>
+            </ObjectPageSection>
+            
+                
+
+            <ObjectPageSection titleUppercase="false" id="Tabtitle" title="{i18n>Header6}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<m:ScrollContainer
+	id="idScrollContainer"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTable"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel32}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel33}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel34}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel35}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel36}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>TDlabel37}" />
+</m:Column>
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Test-AuthLevel" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reamrk" />
+
+</m:cells>
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+ </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+            
+        </sections>
+        <footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button text="{i18n>footerBtn1}" press="onSavePress" />
+					<m:Button text="{i18n>footerBtn2}" press="onSaveAsDraftPress" />
+                    <m:Button text="{i18n>footerBtn3}" press="onEdit" />
+                    <m:Button text="{i18n>footerBtn4}" press="onFooter" />
+				</m:contentRight>
+			</m:Bar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>
