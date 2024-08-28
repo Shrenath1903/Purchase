@@ -4,10 +4,17 @@
       <f:header>
          <f:DynamicPageHeader>
             <f:content>
-               <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ZC_MM_PURREQ" useToolbar="true">
-                  <smartFilterBar:controlConfiguration>
+               <smartFilterBar:SmartFilterBar id="smartFilterBar" 
+               entitySet="ZC_MM_PURREQ" useToolbar="false" enableBasicSearch="true"
+               basicSearchFieldName="PurchaseRequisition">
+               	<smartFilterBar:customData>
+						<core:CustomData key="defaultFilterBarExpanded" value='{"PurchaseRequisition": "true"}'/>
+						<core:CustomData key="defaultShowAllFilters" value='{"PurchaseRequisition": "true"}'/>
+					</smartFilterBar:customData>     
+                  <!-- <smartFilterBar:controlConfiguration>
                      <smartFilterBar:ControlConfiguration key="PurchaseRequisition" />
-                  </smartFilterBar:controlConfiguration>
+                     
+                  </smartFilterBar:controlConfiguration> -->
                </smartFilterBar:SmartFilterBar>
             </f:content>
          </f:DynamicPageHeader>

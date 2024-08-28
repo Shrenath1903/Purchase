@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("mrpl.etender.austerityapproval.controller.austerityapproval",{onInit:function(){}})});
+//# sourceMappingURL=austerityapproval.controller.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"austerityapproval.controller.js","names":["sap","ui","define","Controller","extend","onInit"],"sources":["austerityapproval-dbg.controller.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,CACV,8BAEJ,SAAUC,GACN,aAEA,OAAOA,EAAWC,OAAO,8DAA+D,CACpFC,OAAQ,WAER,GAER","ignoreList":[]}

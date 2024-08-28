@@ -1,0 +1,1166 @@
+<mvc:View controllerName="mrpl.etender.bidevaluation.controller.bidEvaluationform"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+ 	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+			
+		</headerTitle>
+
+		<headerContent>
+			 <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+
+		<sections>
+		    <ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>bidmainHeader1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                               <m:Label text="{i18n>bidLab27}"/>
+<m:Input/>
+                              <m:Label text="{i18n>bidLab28}"/>
+<m:Input/>
+                               
+                               
+                               
+                               
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+					 <ObjectPageSubSection titleUppercase="false" title="{i18n>bidLab29}">
+                <m:ScrollContainer
+                    id="idScrollContainers01"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                    <m:Table id="idProductsTables01"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab31}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab32}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader5}" />
+</m:Column>
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+                        
+                    </m:Table>
+                </m:ScrollContainer>
+            </ObjectPageSubSection>
+ 
+
+  <ObjectPageSubSection titleUppercase="false" title="{i18n>bidLab30}">
+                <m:ScrollContainer
+                    id="idScrollContainers001"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                    <m:Table id="idProductsTables001"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab31}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab33}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader5}" />
+</m:Column>
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+                        
+                    </m:Table>
+                </m:ScrollContainer>
+            </ObjectPageSubSection>
+
+			
+                <ObjectPageSubSection titleUppercase="false" title="{i18n>}">
+                   <m:ScrollContainer
+                    id="ScrollContainers0011"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                    <m:Table id="ProductsTables0011"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab23}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader5}" />
+</m:Column>
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+
+                        
+                    </m:Table>
+                </m:ScrollContainer>
+            </ObjectPageSubSection>
+			   <ObjectPageSubSection titleUppercase="false" title="{i18n>bidLab24}">
+                <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+                    <f:content>
+                     
+                        
+                        
+                        <m:TextArea maxLength="40" width="100%" />
+                    </f:content>
+                </f:SimpleForm>
+            </ObjectPageSubSection>
+            
+
+<ObjectPageSubSection titleUppercase="false" title = "{i18n>bidCol14}">
+               <m:ScrollContainer
+	id="idScrollContainerid"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTableid"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader7}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader8}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader9}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader10}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader11}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidCol15}" />
+</m:Column>
+
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{}"/>
+<m:Text
+						text="{}" />
+<m:Text
+						text="{}" />
+<m:Text
+						text="{i18n>bidCol7}" />
+<m:Text
+						text="{i18n>bidCol12}" />	
+						<m:Text
+						text="{}" />
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{}"/>
+<m:Text
+						text="{}" />
+<m:Text
+						text="{}" />
+<m:Text
+						text="{i18n>bidCol8}" />
+<m:Text
+						text="{i18n>bidCol13}" />	
+<m:Text
+						text="{}" />	
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{}"/>
+<m:Text
+						text="{}" />
+<m:Text
+						text="{}" />
+<m:Text
+						text="{i18n>bidCol9}" />
+<m:Text
+						text="{i18n>bidCol12}" />	
+<m:Text
+						text="{}" />	
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{}"/>
+<m:Text
+						text="{}" />
+<m:Text
+						text="{}" />
+<m:Text
+						text="{i18n>bidCol10}" />
+<m:Text
+						text="{i18n>bidCol13}" />	
+<m:Text
+						text="{}" />	
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{}"/>
+<m:Text
+						text="{}" />
+<m:Text
+						text="{}" />
+<m:Text
+						text="{i18n>bidCol11}" />
+<m:Text
+						text="{i18n>bidCol13}" />	
+<m:Text
+						text="{}" />	
+
+</m:cells>
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+            </ObjectPageSubSection>
+
+
+                </subSections>
+            </ObjectPageSection> 
+
+			
+
+    <ObjectPageSection titleUppercase="false" id="combinedSection" title="{i18n>bidmainHeader2}">
+        <subSections>
+            <!-- First SubSection with the Table -->
+            <ObjectPageSubSection titleUppercase="false">
+                <m:ScrollContainer
+                    id="idScrollContainers1"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                    <m:Table id="idProductsTables1"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader12}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader1}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader5}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader6}" />
+</m:Column>
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab1}"/>
+<m:Text
+						text="T{i18n>bidLab12}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab2}"/>
+<m:Text
+						text="{i18n>bidLab13}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab3}"/>
+<m:Text
+						text="T{i18n>bidLab14}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab4}"/>
+<m:Text
+						text="{i18n>bidLab15}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab5}"/>
+<m:Text
+						text="{i18n>bidLab16}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab6}"/>
+<m:Text
+						text="{i18n>bidLab17}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab7}"/>
+<m:Text
+						text="{i18n>bidLab18}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab8}"/>
+<m:Text
+						text="{i18n>bidLab19}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab9}"/>
+<m:Text
+						text="{i18n>bidLab20}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab10}"/>
+<m:Text
+						text="{i18n>bidLab21}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidLab11}"/>
+<m:Text
+						text="{i18n>bidLab22}" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+                        
+                    </m:Table>
+                </m:ScrollContainer>
+            </ObjectPageSubSection>
+
+            <ObjectPageSubSection titleUppercase="false" title="{i18n>}">
+                <m:ScrollContainer
+                    id="idScrollContainers0011"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                    <m:Table id="idProductsTables0011"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidLab23}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader5}" />
+</m:Column>
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text=""/>
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />
+<m:Text
+						text="" />	
+<m:Text
+						text="" />
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+            
+
+
+                        
+                    </m:Table>
+                </m:ScrollContainer>
+            </ObjectPageSubSection>
+            <ObjectPageSubSection titleUppercase="false" title="{i18n>bidLab24}">
+                <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+                    <f:content>
+                     
+                        
+                        
+                        <m:TextArea maxLength="40" width="100%" />
+                    </f:content>
+                </f:SimpleForm>
+            </ObjectPageSubSection>
+
+			 <ObjectPageSubSection titleUppercase="false" title = "{i18n>bidCol14}">
+               <m:ScrollContainer
+	id="idScrollContainer"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTable"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader7}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader8}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader9}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader10}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>bidtabHeader11}" />
+</m:Column>
+
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidCol1}"/>
+<m:Text
+						text="{i18n>bidCol3}" />
+<m:Text
+						text="{i18n>bidCol5}" />
+<m:Text
+						text="{i18n>bidCol7}" />
+<m:Text
+						text="{i18n>bidCol12}" />	
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="{i18n>bidCol2}"/>
+<m:Text
+						text="{i18n>bidCol4}" />
+<m:Text
+						text="{i18n>bidCol6}" />
+<m:Text
+						text="{i18n>bidCol8}" />
+<m:Text
+						text="{i18n>bidCol13}" />	
+
+</m:cells>
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+
+	
+                    
+	 
+</sections>
+
+        <footer>
+			<m:Bar>
+				<m:contentRight>
+                <m:Button text="{i18n>bidBtn1}" press="onExecute" />
+					<m:Button text="{i18n>bidBtn2}" press="onExit" />
+					<m:Button text="{i18n>bidBtn3}" press="onSavePress" />
+					<m:Button text="{i18n>bidBtn4}" press="onSaveAsDraftPress" />
+				</m:contentRight>
+			</m:Bar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

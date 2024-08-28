@@ -93,7 +93,7 @@
       "": {
         "dataSource": "s4Service",
         "preload": true,
-        "settings": {         
+        "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
@@ -102,12 +102,12 @@
       "capService": {
         "dataSource": "capService",
         "preload": true,
-        "settings": {         
+        "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      }  
+      }
     },
     "resources": {
       "css": [

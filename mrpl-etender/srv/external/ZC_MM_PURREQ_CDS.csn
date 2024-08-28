@@ -67,6 +67,65 @@
     }
    }
   },
+  "ZC_MM_PURREQ_CDS.I_MaterialStdVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.searchable": "true",
+   "@sap.content.version": "1",
+   "@sap.label": "Material",
+   "@sap.value.list": "true",
+   "elements": {
+    "Material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "Material_Text",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number",
+     "notNull": true
+    },
+    "Material_Text": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Material Description",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "ZC_MM_PURREQ_CDS.I_PlantStdVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.searchable": "true",
+   "@sap.content.version": "1",
+   "@sap.label": "Plant",
+   "@sap.value.list": "true",
+   "elements": {
+    "Plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "PlantName",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "PlantName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Plant Name"
+    }
+   }
+  },
   "ZC_MM_PURREQ_CDS.I_Purchaserequisition": {
    "kind": "entity",
    "@cds.external": true,
@@ -421,8 +480,18 @@
      "type": "cds.String",
      "length": 10,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Purchase Requisition",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "PR",
      "@sap.quickinfo": "Purchase Requisition Number",
+     "notNull": true
+    },
+    "PurchaseRequisitionItem": {
+     "key": true,
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Item",
+     "@sap.quickinfo": "Item number of purchase requisition",
      "notNull": true
     },
     "PurReqnDescription": {
@@ -527,8 +596,9 @@
      "type": "cds.String",
      "length": 40,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Material",
-     "@sap.quickinfo": "Material Number"
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Material Number",
+     "@sap.value.list": "standard"
     },
     "ManufacturerMaterial": {
      "type": "cds.String",
@@ -541,7 +611,9 @@
      "type": "cds.String",
      "length": 4,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Plant"
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Plant",
+     "@sap.value.list": "standard"
     },
     "StorageLocation": {
      "type": "cds.String",
@@ -574,7 +646,7 @@
      "precision": 13,
      "scale": 3,
      "@sap.unit": "BaseUnit",
-     "@sap.label": "Quantity requested",
+     "@sap.label": "Quantity",
      "@sap.quickinfo": "Purchase requisition quantity"
     },
     "BaseUnit": {
@@ -641,7 +713,7 @@
      "precision": 12,
      "scale": 3,
      "@sap.unit": "PurReqnItemCurrency",
-     "@sap.label": "Valuation Price",
+     "@sap.label": "Price",
      "@sap.quickinfo": "Price in Purchase Requisition"
     },
     "PurReqnPriceQuantity": {

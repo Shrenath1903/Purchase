@@ -215,44 +215,44 @@ sap.ui.define(
                             case "1":
                                 
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "ceg", action : "ceg" }
+                                    target : { semanticObject : "mrpl", action : "ceg" }
                                 })
                                 break;
                             
                             case "2":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "pqcform", action : "pqcform" }
+                                    target : { semanticObject : "mrpl", action : "pqc" }
                                 })
                                 break;
 
                           
                             case "3":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "singletendercert", action : "singletendercert" }
+                                    target : { semanticObject : "mrpl", action : "singlecertificatetender" }
                                 })
                                 break;
 
                             case "4":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "austerityapproval", action : "austerityapproval" }
+                                    target : { semanticObject : "mrpl", action : "austerityapproval" }
                                 })
                                 break;
 
                             case "5":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "tenderdocument", action : "tenderdocument" }
+                                    target : { semanticObject : "mrpl", action : "tenderdocument" }
                                 })
                                 break;
 
                             case "6":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "emp_details_form", action : "emp_details_form" }
+                                    target : { semanticObject : "mrpl", action : "emd" }
                                 })
                                 break;
 
                             case "7":
                                 oCrossAppNav.toExternal({
-                                    target : { semanticObject : "bidevaluation", action : "bidevaluation" }
+                                    target : { semanticObject : "mrpl", action : "bidevaluation" }
                                 })
                                 break;
 

@@ -1,0 +1,23 @@
+{
+  "Image/header.png": 1724678842202,
+  "controller/austerityapproval.controller.js": 1724678842202,
+  "model/models.js": 1724678842202,
+  "controller/App.controller.js": 1724678842202,
+  "manifest.json": 1724740285668,
+  "Component.js": 1724678842202,
+  "controller/austerityapproval-dbg.controller.js": 1724678842202,
+  "controller/austerityapproval.controller.js.map": 1724740285947,
+  "model/models-dbg.js": 1724678842202,
+  "model/models.js.map": 1724740285952,
+  "controller/App-dbg.controller.js": 1724678842202,
+  "controller/App.controller.js.map": 1724740285950,
+  "Component-dbg.js": 1724678842202,
+  "Component.js.map": 1724740285951,
+  "Component-preload.js": 1724740286192,
+  "Component-preload.js.map": 1724740286192,
+  "view/austerityapproval.view.xml": 1724678842202,
+  "view/App.view.xml": 1724678842202,
+  "css/style.css": 1724678842202,
+  "i18n/i18n.properties": 1724678842202,
+  "index.html": 1724678842202
+}

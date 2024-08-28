@@ -15,7 +15,7 @@
       "version": "1.14.4",
       "toolsId": "9f9ef9d9-ab83-4202-9396-190dc8ad9edb"
     },
-   "dataSources": {
+    "dataSources": {
       "s4Service": {
         "uri": "/odata/v2/etender-s4/",
         "type": "OData",
@@ -93,7 +93,7 @@
       "": {
         "dataSource": "s4Service",
         "preload": true,
-        "settings": {         
+        "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
@@ -102,12 +102,12 @@
       "capService": {
         "dataSource": "capService",
         "preload": true,
-        "settings": {         
+        "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      }   
+      }
     },
     "resources": {
       "css": [

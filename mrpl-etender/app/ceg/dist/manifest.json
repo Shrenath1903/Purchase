@@ -35,8 +35,8 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "mrpl-releasedprs": {
-                    "semanticObject": "ceg",
+                "mrpl-ceg": {
+                    "semanticObject": "mrpl",
                     "action": "ceg",
                     "title": "{{flpTitle}}",
                     "subTitle": "{{flpSubtitle}}",
