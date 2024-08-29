@@ -1,0 +1,388 @@
+<mvc:View controllerName="mrpl.etender.pqc.controller.pqcForm"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m">
+ 	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+				</headerTitle>
+		<headerContent>
+                   	<m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+		<sections>
+             <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>sectionsTitle9}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>labelGR28}"/>
+                                <m:Input/>
+                                <m:Label text="{i18n>labelGR29}"/>
+                                <m:Input/>
+                                <m:Label text="{i18n>labelGR30}"/>
+                                <m:Input/>
+                                <m:Label text="{i18n>labelGR31}"/>
+                                <m:Input type="Url"/>
+                                <m:Label text="{i18n>labelGR32}"/>
+                                <m:Input/>
+                                <m:Label text="{i18n>labelGR33}"/>
+                                <m:Input type="Tel"/>
+                                
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                         <ObjectPageSection titleUppercase="false" id="Employmsent" title="{i18n>sectionsTitle10}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>labelGR34}"/>
+                                <m:Input/>
+                               <m:Label text="{i18n>labelGR35}"/>
+<m:RadioButtonGroup>
+    <m:buttons>
+        <m:RadioButton text="{i18n>radBtn1}" selected="true"/>
+        <m:RadioButton text="{i18n>radBtn2}"/>
+    </m:buttons>
+</m:RadioButtonGroup>
+<m:Label text="{i18n>labelGR36}"/>
+                                <m:Input/>
+
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+ 
+
+                        
+                        
+                        
+            <ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>sectionsTitle11}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+       
+                                <m:Text text="{i18n>labelGR1}"/>
+
+                                <m:Label text="{i18n>labelGR2}"/>
+                                <m:Input/>
+                                <m:Text text="{i18n>labelGRdul}"/>
+
+                                
+								<m:Label text="{i18n>labelGR3}"/>
+								<m:Input />
+                                <m:Text text="{i18n>labelGRdul}"/>
+
+
+
+                                    <m:Label text="{i18n>labelGR4}" labelFor="groupF" />
+                                    <m:Text text="{i18n>labelGR5}" />
+                                    <m:RadioButtonGroup id="groupF">
+                                        <m:RadioButton
+                                            width="240px"
+                                            wrapping="true"
+                                            wrappingType="Normal"
+                                            text='{i18n>radBtn3}"'
+                                            selected="true" />
+                                        <m:RadioButton
+                                            width="240px"
+                                            wrapping="true"
+                                            wrappingType="Hyphenated"
+                                            text='{i18n>radBtn4}"' />
+                                    </m:RadioButtonGroup>
+
+
+                                <m:Label text="{i18n>labelGR6}"/>
+                                <m:Text text="{i18n>labelGR7}"/>
+								<m:Input />
+		                        <!-- <m:Text text="{i18n>labelGR7}" /> -->
+                                
+                                <m:Label text="{i18n>labelGR8}" labelFor="group2" />
+                                <m:RadioButtonGroup id="group2" columns="5">
+                                    <m:RadioButton
+                                        width="240px"
+                                        wrapping="true"
+                                        wrappingType="Normal"
+                                        text='{i18n>radBtn5}"'
+                                        selected="true" />
+                                    <m:RadioButton
+                                        width="240px"
+                                        wrapping="true"
+                                        wrappingType="Hyphenated"
+                                        text='{i18n>radBtn6}"' />
+                                </m:RadioButtonGroup>
+
+
+                                <m:Label text="{i18n>labelGR9}"/>
+                                <m:Text text="{i18n>labelGR10}"/>
+                                <m:Input/>
+
+                        
+
+
+			
+
+
+                                <m:Label text="" labelFor="group5" />
+                                <m:RadioButtonGroup id="group5" columns="2">
+                                    <m:RadioButton
+                                        width="240px"
+                                        wrapping="true"
+                                        wrappingType="Normal"
+                                        text='{i18n>radBtn7}"'
+                                        selected="true" />
+                                    <m:RadioButton
+                                        width="240px"
+                                        wrapping="true"
+                                        wrappingType="Hyphenated"
+                                        text='{i18n>radBtn8}"' />
+
+                                    <m:RadioButton
+                                        width="240px"
+                                        wrapping="true"
+                                        wrappingType="Hyphenated"
+                                        text='{i18n>radBtn9}"' />
+                                </m:RadioButtonGroup>
+
+                                <m:Label text="{i18n>labelGR6}"/>
+                                <m:Input />
+
+
+                            </f:content>
+                    </f:SimpleForm>    
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+
+
+<ObjectPageSection titleUppercase="false" id="secTitle" title="{i18n>labelGR11}">
+    <subSections>
+        <ObjectPageSubSection titleUppercase="false">
+            <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="1" labelSpanM="1" emptySpanL="1" emptySpanM="1" columnsL="1" columnsM="1"> -->
+                <!-- <f:content>
+                 -->
+	<m:VBox width="100%">
+                    <!-- Group 1 -->
+                    <m:Label text="{i18n>labelGR12}" />
+                    <m:RadioButton width="100%" wrapping="true" text="{i18n>radBtn10}" selected="true" groupName="group1" />
+                    <m:RadioButton width="100%" wrapping="true" text="{i18n>radBtn11}" groupName="group1" />
+                    <m:RadioButton width="100%" wrapping="true" text="{i18n>radBtn12}" selected="true" groupName="group1" />
+                    <m:RadioButton width="100%" wrapping="true" text="{i18n>radBtn15}" groupName="group1" />
+
+                    <!-- Group 2 -->
+                    <m:Label text="{i18n>labelGR13}" />
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn16}" selected="true" />
+                    
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn17}" />
+                    
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn18}" selected="true" />
+                    
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn19}" />
+                    <m:TextArea value="" maxLength="50" width="100%"/>
+
+                    <!-- Group 3 -->
+                    <m:Label text="{i18n>labelGR14}" />
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn20}" selected="true" />
+                     
+                    <m:CheckBox width="100%" wrapping="true" text="{i18n>radBtn21}" />
+                    
+                    <m:CheckBox width="240px" wrapping="true" text="{i18n>radBtn22}" selected="true" />
+                    
+                    <m:CheckBox width="240px" wrapping="true" text="{i18n>radBtn23}" />
+                    
+                    <m:CheckBox width="240px" wrapping="true" text="{i18n>radBtn24}" selected="true" />
+                    
+                    <m:CheckBox width="240px" wrapping="true" text="{i18n>radBtn25}" />
+	            </m:VBox>
+                <!-- </f:content> -->
+            <!-- </f:SimpleForm> -->
+        </ObjectPageSubSection>
+    </subSections>
+</ObjectPageSection>
+
+
+             <ObjectPageSection titleUppercase="false" id="secnTitle" title="{i18n>header1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+                            <f:content>
+                                <!-- <m:Input/> -->
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+
+                                  
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                   
+                </subSections>
+            </ObjectPageSection>
+<ObjectPageSection titleUppercase="false" id="6title" title="{i18n>header2}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="1" columnsL="2" columnsXL="2">
+                            <f:content>
+                                <m:Text text="{i18n>text1}"/>
+
+                            <m:Label text="{i18n>text2}" labelFor="section-6" />
+                                        
+                                        <m:RadioButtonGroup id="section-6">
+                                            <m:RadioButton
+                                                width="240px"
+                                                wrapping="true"
+                                                wrappingType="Normal"
+                                                text='{i18n>cmb1}'
+                                                selected="true" />
+                                            <m:RadioButton
+                                                width="240px"
+                                                wrapping="true"
+                                                wrappingType="Hyphenated"
+                                                text='{i18n>cmb2}' />
+
+                                            <m:RadioButton
+                                                width="240px"
+                                                wrapping="true"
+                                                wrappingType="Normal"
+                                                text='{i18n>cmb3}'
+                                                selected="true" />
+                                            <m:RadioButton
+                                                width="240px"
+                                                wrapping="true"
+                                                wrappingType="Hyphenated"
+                                                text='{i18n>cmb4}' />
+                                                
+                                            <m:RadioButton
+                                                width="240px"
+                                                wrapping="true"
+                                                wrappingType="Normal"
+                                                text='{i18n>cmb5}'
+                                                selected="true" />
+                                                                                 
+                                        </m:RadioButtonGroup>
+
+                                <m:Label text="{i18n>text3}"/>
+                                <m:Input />
+                                <m:Text text="{i18n>text3.1}"/>
+                                
+
+                                <!-- <m:Text text=".............."/> -->
+                                <!-- <m:Text text="{i18n>text4}"/> -->
+
+                    
+
+
+                      <m:Label text="{i18n>text4}"/>
+                                <m:Input ></m:Input>
+
+
+                                <m:Label text="{i18n>text5}" class="sapUiTinyMarginTop"/>
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="7Title" title="{i18n>sectionsTitle7}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+                                <m:Label text="{i18n>labelGR26}"/>
+                                <m:Input/>
+                                <m:Label text="{i18n>labelGR27}"/>
+                                <m:Input/>
+                               
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+
+                <ObjectPageSection titleUppercase="false" id="Tabtitle" title="Table">
+                                <subSections>
+                                    <ObjectPageSubSection titleUppercase="false">
+                <m:ScrollContainer
+                    id="idScrollContainer"
+                    width="100%"
+                    height="auto"
+                    horizontal="true"
+                    vertical="false">
+                <m:Table id="idProductsTable"
+                        inset="false"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        items="">
+                
+                <m:columns>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName1}" />
+                </m:Column>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName2}" />
+                </m:Column>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName3}" />
+                </m:Column>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName4}" />
+                </m:Column>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName5}" />
+                </m:Column>
+                <m:Column width="12em">
+                <m:Text text="{i18n>tabName6}" />
+                </m:Column>
+                </m:columns>
+                <m:items>
+                <m:ColumnListItem vAlign="Middle">
+                <m:cells>
+                <m:ObjectIdentifier
+                                    
+                                        text="Test-EmpCode"/>
+                <m:Text
+                                        text="Test-EmpName" />
+                <m:Text
+                                        text="Test-EmpDesg" />
+                <m:Text
+                                        text="Test-AuthLevel" />
+                <m:Text
+                                        text="Test-Status" />  
+                <m:Text
+                                        text="Test-Reason" />
+                
+                </m:cells>
+                </m:ColumnListItem>
+                </m:items>
+                </m:Table>
+                </m:ScrollContainer>
+                </ObjectPageSubSection>
+                
+                                </subSections>
+                            </ObjectPageSection>
+            
+        </sections>
+
+<footer>
+<m:Bar>
+<m:contentRight>
+<m:Button text="{i18n>fBtn1}" press="onSavePress" />
+<m:Button text="{i18n>fBtn2}" press="onSaveAsDraftPress" />
+</m:contentRight>
+</m:Bar>
+</footer>
+
+	</ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        title="Pur Reqn Release Status"
+        afterClose=".onValueHelpClose">
+        
+        <List
+            mode="SingleSelectLeft"
+            items="{/ZC_MM_PURREQ}"
+            includeItemInSelection="true"
+            selectionChange=".onPurReqnReleaseStatusChange">
+            <StandardListItem
+                title="{PurReqnReleaseStatus}"/>
+        </List>   
+        <endButton>
+            <Button text="Close" press=".onReleaseStatusClose" />
+        </endButton>
+        
+    </Dialog>
+</core:FragmentDefinition>
