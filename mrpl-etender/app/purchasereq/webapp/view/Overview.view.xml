@@ -4,10 +4,17 @@
       <f:header>
          <f:DynamicPageHeader>
             <f:content>
-               <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ZC_MM_PURREQ" useToolbar="true">
-                  <smartFilterBar:controlConfiguration>
+               <smartFilterBar:SmartFilterBar id="smartFilterBar" 
+               entitySet="ZC_MM_PURREQ" useToolbar="false" enableBasicSearch="true"
+               basicSearchFieldName="PurchaseRequisition">
+               	<smartFilterBar:customData>
+						<core:CustomData key="defaultFilterBarExpanded" value='{"PurchaseRequisition": "true"}'/>
+						<core:CustomData key="defaultShowAllFilters" value='{"PurchaseRequisition": "true"}'/>
+					</smartFilterBar:customData>     
+                  <!-- <smartFilterBar:controlConfiguration>
                      <smartFilterBar:ControlConfiguration key="PurchaseRequisition" />
-                  </smartFilterBar:controlConfiguration>
+                     
+                  </smartFilterBar:controlConfiguration> -->
                </smartFilterBar:SmartFilterBar>
             </f:content>
          </f:DynamicPageHeader>
@@ -19,8 +26,7 @@
           useTablePersonalisation="true" header="{i18n&gt;headerName5}" 
           showRowCount="true" persistencyKey="SmartTableRefApp_Explored" 
           enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
-          tableType="ResponsiveTable" demandPopin="true" enableAutoColumnWidth="true" 
-          initiallyVisibleFields="PurchaseRequisition,PurReqnReleaseStatus,PurchasingDocumentItem,PurchaseRequisitionPrice,DeliveryDate,CreationDate">
+          tableType="ResponsiveTable" demandPopin="true" enableAutoColumnWidth="true">
           <Table mode="SingleSelectMaster" selectionChange=".onRowSelectionChange" 
             growing="true" growingScrollToLoad="true"/>
          </smartTable:SmartTable>

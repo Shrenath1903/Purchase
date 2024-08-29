@@ -50,16 +50,26 @@ modules:
       - mrpletenderemd.zip
       name: mrpletenderemd
       target-path: resources/
-- name: mrplmmreleasedprspurchasereq
-  type: html5
-  path: app/purchasereq
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
+    - artifacts:
+      - mrpletendersinglecert.zip
+      name: mrpletendersinglecert
+      target-path: resources/
+    - artifacts:
+      - mrpletendertenderdocument.zip
+      name: mrpletendertenderdocument
+      target-path: resources/
+    - artifacts:
+      - mrpletendersinglecertificatetender.zip
+      name: mrpletendersinglecertificatetender
+      target-path: resources/
+    - artifacts:
+      - mrpletenderbidevaluation.zip
+      name: mrpletenderbidevaluation
+      target-path: resources/
+    - artifacts:
+      - mrpletenderausterityapproval.zip
+      name: mrpletenderausterityapproval
+      target-path: resources/
 - name: mrpl-etender-destination-content
   type: com.sap.application.content
   requires:
@@ -98,6 +108,16 @@ modules:
         existing_destinations_policy: update
   build-parameters:
     no-source: true
+- name: mrplmmreleasedprspurchasereq
+  type: html5
+  path: app/purchasereq
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 - name: mrpletenderceg
   type: html5
   path: app/ceg
@@ -121,6 +141,56 @@ modules:
 - name: mrpletenderemd
   type: html5
   path: app/emd
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletendersinglecert
+  type: html5
+  path: app/singlecertificatetender
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletendertenderdocument
+  type: html5
+  path: app/tenderdocument
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletendersinglecertificatetender
+  type: html5
+  path: app/singlecertificatetender
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletenderbidevaluation
+  type: html5
+  path: app/bidevaluation
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletenderausterityapproval
+  type: html5
+  path: app/austerityapproval
   build-parameters:
     build-result: dist
     builder: custom
