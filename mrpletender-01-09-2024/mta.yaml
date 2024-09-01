@@ -1,0 +1,227 @@
+_schema-version: 3.3.0
+ID: mrpl-etender
+description: MRPL eTender
+version: 1.0.0
+modules:
+- name: mrpl-etender-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: mrpl-etender-repo-host
+  - name: mrpl-etender-destination-service
+  - name: uaa_mrpl-etender
+  - name: mrpl-etender-connectivity-service
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    readiness-health-check-http-endpoint: /health
+    readiness-health-check-type: http
+  build-parameters:
+    builder: npm
+    ignore:
+    - package-lock.json
+    - node_modules/
+- name: mrpl-etender-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: mrpl-etender-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - mrplmmreleasedprspurchasereq.zip
+      name: mrplmmreleasedprspurchasereq
+      target-path: resources/
+    - artifacts:
+      - mrpletenderceg.zip
+      name: mrpletenderceg
+      target-path: resources/
+    - artifacts:
+      - mrpletenderpqc.zip
+      name: mrpletenderpqc
+      target-path: resources/
+    - artifacts:
+      - mrpletenderemd.zip
+      name: mrpletenderemd
+      target-path: resources/
+    - artifacts:
+      - mrpletendernegotiation.zip
+      name: mrpletendernegotiation
+      target-path: resources/
+    - artifacts:
+      - mrpletendernegotiationform.zip
+      name: mrpletendernegotiationform
+      target-path: resources/
+    - artifacts:
+      - mrpletenderchecklist.zip
+      name: mrpletenderchecklist
+      target-path: resources/
+- name: mrplmmreleasedprspurchasereq
+  type: html5
+  path: app/purchasereq
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpl-etender-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: mrpl-etender-destination-service
+    parameters:
+      content-target: true
+  - name: mrpl-etender-repo-host
+    parameters:
+      service-key:
+        name: mrpl-etender-repo-host-key
+  - name: uaa_mrpl-etender
+    parameters:
+      service-key:
+        name: uaa_mrpl-etender-key
+  - name: srv-api
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Authentication: OAuth2UserTokenExchange
+          HTML5.Timeout: 600001
+          Name: mrpl-etender-srv
+          TokenServiceInstanceName: mrpl-etender-xsuaa-service
+          TokenServiceKeyName: uaa_mrpl-etender-key
+          URL: ~{srv-api/srv-url}
+          sap.cloud.service: mrpl.etender
+        - Name: mrpl_etender_purreq_mrpl_etender_repo_host
+          ServiceInstanceName: mrpl-etender-html5-srv
+          ServiceKeyName: mrpl-etender-repo-host-key
+          sap.cloud.service: mrpl.etender
+        - Authentication: OAuth2UserTokenExchange
+          Name: mrpl_etender_purreq_uaa_mrpl_etender
+          ServiceInstanceName: mrpl-etender-xsuaa-service
+          ServiceKeyName: uaa_mrpl-etender-key
+          sap.cloud.service: mrpl.etender
+        existing_destinations_policy: update
+  build-parameters:
+    no-source: true
+- name: mrpletenderceg
+  type: html5
+  path: app/ceg
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletenderpqc
+  type: html5
+  path: app/pqc
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletenderemd
+  type: html5
+  path: app/emd
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletendernegotiation
+  type: html5
+  path: negotiation
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletendernegotiationform
+  type: html5
+  path: app/negotiationform
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mrpletenderchecklist
+  type: html5
+  path: app/checklist
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: mrpl-etender-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: mrpl-etender-html5-srv
+    service-plan: app-host
+- name: mrpl-etender-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: mrpl-etender-srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: mrpl-etender-destination-service
+    service-plan: lite
+  requires:
+  - name: srv-api
+- name: uaa_mrpl-etender
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: mrpl-etender-xsuaa-service
+    service-plan: application
+- name: mrpl-etender-connectivity-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production

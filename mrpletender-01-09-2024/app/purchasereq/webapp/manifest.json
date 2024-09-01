@@ -1,0 +1,176 @@
+{
+  "_version": "1.48.0",
+  "sap.app": {
+    "id": "mrpl.mm.releasedprs.purchasereq",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.3",
+      "toolsId": "c9a339e0-e97c-4463-9768-ab47b97c8aeb"
+    },
+    "dataSources": {
+      "s4Service": {
+        "uri": "/odata/v2/etender-s4/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
+      },
+      "capService": {
+        "uri": "/odata/v2/etender-catalog/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "mrpl-releasedprs": {
+          "semanticObject": "mrpl",
+          "action": "releasedprs",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.108.26",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "mrpl.mm.releasedprs.purchasereq.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "s4Service",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "capService": {
+        "dataSource": "capService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "lib/jspdf.min.js"
+        },
+        {
+          "uri": "lib/html2canvas.min.js"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "mrpl.mm.releasedprs.purchasereq.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteOverview",
+          "pattern": ":?query:",
+          "target": [
+            "TargetOverview"
+          ]
+        },
+        {
+          "pattern": "OverViewDetailsPage/{PurchaseRequisition}",
+          "name": "OverViewDetailsPage",
+          "target": "OverViewDetailsPage"
+        }
+      ],
+      "targets": {
+        "TargetOverview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Overview",
+          "viewName": "Overview"
+        },
+        "OverViewDetailsPage": {
+          "viewName": "OverViewDetailsPage",
+          "viewId": "OverViewDetailsPage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "mrpl.mm.releasedprs.purchasereq.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "mrpl.etender"
+  }
+}

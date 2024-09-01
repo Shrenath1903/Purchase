@@ -1,0 +1,615 @@
+<mvc:View controllerName="mrpl.etender.ceg.controller.cegform"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+ 	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+			
+		</headerTitle>
+
+		<headerContent>
+			 <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection titleUppercase="false" id="Employment" title="section-1">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>pr_no}"/>
+								<m:Input/>
+								<m:Label text="{i18n>budget_privision}"/>
+								<m:Input/>
+								<m:Label text="{i18n>backup_measurement}"/>
+								<m:Input />
+								<m:Label text="{i18n>brief_history}"/>
+								<m:Input />
+
+								<m:Label text="{i18n>description}"/>
+								<m:Input/>
+								<m:Label text="{i18n>amount_provided}"/>
+								<m:Input />
+								<m:Label text="{i18n>backup_rates}"/>
+								<m:Input />
+								<m:Label text="{i18n>financial_viability}"/>
+								<m:Input />
+
+								<m:Label text="{i18n>cost_center}"/>
+								<m:Input />
+								<m:Label text="{i18n>backup_quantities}"/>
+								<m:Input />
+								<m:Label text="{i18n>total_amount_estimate}"/>
+								<m:Input />
+								<m:Label text="{i18n>scope_defining}"/>
+								<m:Input />
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="Employmsent" title="section-2">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>basis_rates_quantities}"/>
+								<m:Input/>
+								<m:Label text="{i18n>time_estimates_perpared}"/>
+								<m:Input/>
+	
+
+								<m:Label text="{i18n>time_estimated_commencement}"/>
+								<m:Input/>
+								<m:Label text="{i18n>type_tender}"/>
+								<m:Input />
+	
+
+								<m:Label text="{i18n>chart_attached}"/>
+								<m:Input />
+								<m:Label text="{i18n>please_specify}"/>
+								<m:Input />
+
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            			<ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>table_title}">
+				
+					<ObjectPageSubSection titleUppercase="false">
+
+	<m:ScrollContainer
+	id="idScrollContainer"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+	<m:Table id="idProductsTable"
+	
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+		 <m:headerToolbar>
+                    <m:Toolbar>
+                        <m:Title text="{i18n>table_title}" />
+                        <m:ToolbarSpacer />
+                        <m:Button icon="sap-icon://add"  press="onAddRow" />
+                        <m:Button icon="sap-icon://edit" press="onEditTable" />
+                    </m:Toolbar>
+                </m:headerToolbar>
+		<m:columns>
+			<m:Column width="12em">
+				<m:Text text="{i18n>item_code}" />          
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>t_des}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>uom}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>qty}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>basic_for_estimate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>previous_po}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>po_date}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>po_unit_rate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>Escsal}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>escalated_price}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>budget_offer}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>final_estimate}" />
+			</m:Column>
+			<m:Column width="12em">
+				<m:Text text="{i18n>total_amount}" />
+			</m:Column>
+		</m:columns>
+		<m:items>
+			<m:ColumnListItem vAlign="Middle">
+				<m:cells>
+					<m:Text
+						text="201"/>
+					<m:Text
+						text="test description" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="50" />
+					<m:Text
+						text="test" />	
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="50" />
+					<m:Text
+						text="test" />	
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+					<m:Text
+						text="test" />
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+</m:ScrollContainer>
+
+					</ObjectPageSubSection>
+			
+			
+	
+
+                    
+			
+			</ObjectPageSection>
+
+           <ObjectPageSection titleUppercase="false" id="Tabtitlee3" title="{i18n>sectionsTitle010}">
+    <subSections>
+        <ObjectPageSubSection titleUppercase="false">
+            <m:ScrollContainer
+                id="idScrollContainers3"
+                width="100%"
+                height="auto"
+                horizontal="true"
+                vertical="false">
+                
+                <m:Table id="idtable"
+                    inset="false"
+                    growing="true"
+                    growingScrollToLoad="true"
+                    items="">
+                     <m:headerToolbar>
+                    <m:Toolbar>
+                        <m:Title text="{i18n>table_title}" />
+                        <m:ToolbarSpacer />
+                        <m:Button icon="sap-icon://add"  press="onAddRows" />
+                        <m:Button icon="sap-icon://edit" press="onEditTables" />
+                    </m:Toolbar>
+                </m:headerToolbar>
+                    <m:columns>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab1}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab2}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab3}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab4}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab5}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab6}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab7}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab8}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab9}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab10}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab11}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab12}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab13}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab14}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab15}" />
+                        </m:Column>
+                         <m:Column width="12em">
+                            <m:Text text="{i18n>Section2Tab16}" />
+                        </m:Column>
+                    </m:columns>
+
+                    <!-- Row 1 -->
+                    <m:items>
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-3" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-5" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-7" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-9" />
+
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-11" />
+                                   
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test1-1" />
+                                 
+                                </m:HBox>
+                            </m:cells>
+                        </m:ColumnListItem>
+
+                        <!-- Row 2 -->
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test2-3" />
+                                   
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test2-5" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test2-7" />
+                                   
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test2-9" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="Test2-11" />
+                                  
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                                 <m:HBox>
+                                    <m:Text text="Test2-1" />
+                                   
+                                </m:HBox>
+                            </m:cells>
+                        </m:ColumnListItem>
+                        
+                        <!-- Add more rows as needed -->
+                    </m:items>
+                </m:Table>
+            </m:ScrollContainer>
+        </ObjectPageSubSection>
+    </subSections>
+</ObjectPageSection>
+
+          <ObjectPageSection titleUppercase="false" id="Tabtitlee" title="{i18n>sectionsTitle8}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<m:ScrollContainer
+	id="idScrollContainers"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTables"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName1}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName5}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName6}" />
+</m:Column>
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Test-AuthLevel" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reason" />
+
+</m:cells>
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Test-AuthLevel" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reason" />
+
+</m:cells>
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+ </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+
+               <ObjectPageSection titleUppercase="false" id="Tabtitlee1" title="{i18n>sectionsTitle09}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+<m:ScrollContainer
+	id="idScrollContainers1"
+	width="100%"
+	height="auto"
+	horizontal="true"
+	vertical="false">
+<m:Table id="idProductsTables1"
+		inset="false"
+		growing="true"
+		growingScrollToLoad="true"
+		items="">
+
+<m:columns>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName1}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName2}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName3}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName4}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName5}" />
+</m:Column>
+<m:Column width="12em">
+<m:Text text="{i18n>tabName6}" />
+</m:Column>
+</m:columns>
+<m:items>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Vetted by CEG - Indenting Dept" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reason" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Vetted by CEG - Materials" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reason" />
+
+</m:cells>
+
+</m:ColumnListItem>
+<m:ColumnListItem vAlign="Middle">
+<m:cells>
+<m:ObjectIdentifier
+						
+						text="Test-EmpCode"/>
+<m:Text
+						text="Test-EmpName" />
+<m:Text
+						text="Test-EmpDesg" />
+<m:Text
+						text="Vetted by CEG - Finance" />
+<m:Text
+						text="Test-Status" />	
+<m:Text
+						text="Test-Reason" />
+
+</m:cells>
+
+</m:ColumnListItem>
+</m:items>
+</m:Table>
+</m:ScrollContainer>
+ </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+		</sections>
+        <footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button text="{i18n>Btn1}" press="onSavePress" />
+					<m:Button text="{i18n>Btn2}" press="onSaveAsDraftPress" />
+				</m:contentRight>
+			</m:Bar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

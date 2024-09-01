@@ -1,0 +1,4 @@
+
+service etender_CatalogService {
+    
+}

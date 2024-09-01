@@ -1,0 +1,309 @@
+<mvc:View controllerName="mrpl.etender.negotiation.controller.negotiation"
+ displayBlock="true"
+
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.uxap">
+
+<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+			
+		</headerTitle>
+
+		<headerContent>
+			 <m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.png" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>header1}">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>Neglabel1}"/>
+								<m:Input/>
+								<m:Label text="{i18n>Neglabel2}"/>
+								<m:Input/>
+
+								<m:Label text="{i18n>Neglabel3}"/>
+								<m:Input />
+								<m:Label text="{i18n>Neglabel4}"/>
+								<m:Input />
+                               
+
+								<m:Label text="{i18n>Neglabel5}"/>
+								<m:Input/>
+								<m:Label text="{i18n>Neglabel6}"/>
+								<m:Input />
+								<m:Label text="{i18n>Neglabel7}"/>
+								<m:Input />
+                                <m:Label text="{i18n>Neglabel8}"/>
+								<m:Input />
+                                <m:Label text="{i18n>Neglabel9}"/>
+								<m:Input />
+                                <m:Label text="{i18n>Neglabel10}"/>
+								<m:Input />
+                                <m:Label text="{i18n>Neglabel11}"/>
+								<m:Input />
+
+								
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+            		<ObjectPageSection titleUppercase="false" id="costest" title="{i18n>header2}">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+							<f:content>
+								<m:Label text="{i18n>Neglabel12}"/>
+								<m:Input/>
+								<m:Label text="{i18n>Neglabel13}"/>
+								<m:Input/>
+
+								<m:Label text="{i18n>Neglabel14}"/>
+								<m:Input />
+								
+								
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+
+
+                    
+				</subSections>
+			</ObjectPageSection>
+
+           <ObjectPageSection titleUppercase="false" id="Tabtitlee3" title="{i18n>header3}">
+    <subSections>
+        <ObjectPageSubSection titleUppercase="false">
+            <m:ScrollContainer
+                id="idScrollContainers3"
+                width="100%"
+                height="auto"
+                horizontal="true"
+                vertical="false">
+                
+                <m:Table id="idProductsTables3"
+                    inset="false"
+                    growing="true"
+                    growingScrollToLoad="true"
+                    items="">
+                    
+                    <m:columns>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader1}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader2}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader3}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader4}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader5}" />
+                        </m:Column>
+                        <m:Column width="12em">
+                            <m:Text text="{i18n>tabHeader6}" />
+                        </m:Column>
+                   
+                    </m:columns>
+
+                     
+                        
+                        
+                    <m:items>
+                       
+                         <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel1}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel6}" />
+
+                                </m:HBox>
+                              <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+                      
+
+                       <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel2}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel7}" />
+
+                                </m:HBox>
+                              <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+
+ <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel3}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel6}" />
+
+                                </m:HBox>
+                              <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel4}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel7}" />
+
+                                </m:HBox>
+                              <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+                        <m:ColumnListItem vAlign="Middle">
+                            <m:cells>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                 
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                  
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel5}" />
+                                    
+                                </m:HBox>
+                                <m:HBox>
+                                    <m:Text text="{i18n>tabLabel7}" />
+
+                                </m:HBox>
+                              <m:HBox>
+                                    <m:Text text="" />
+
+                                </m:HBox>
+                             
+                            </m:cells>
+                        </m:ColumnListItem>
+                        
+                        
+                        
+                    </m:items>
+                </m:Table>
+            </m:ScrollContainer>
+        </ObjectPageSubSection>
+    </subSections>
+</ObjectPageSection>
+
+            
+                                </sections>
+                                <footer>
+                                    <m:Bar>
+                                        <m:contentRight>
+                                            <m:Button text="{i18n>btn1}" press="onSavePress" />
+                                            <m:Button text="{i18n>btn2}" press="onSaveAsDraftPress" />
+                                        </m:contentRight>
+                                    </m:Bar>
+                                </footer>
+                            </ObjectPageLayout>
+</mvc:View>
+
+
+
+
+
+
+

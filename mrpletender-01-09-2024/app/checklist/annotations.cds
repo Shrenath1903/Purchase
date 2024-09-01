@@ -1,0 +1,1 @@
+using etender_CatalogService as service from '../../srv/etender-cap-service';

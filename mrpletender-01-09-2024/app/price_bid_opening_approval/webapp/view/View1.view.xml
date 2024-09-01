@@ -1,0 +1,424 @@
+<mvc:View controllerName="mrpl.etender.pricebidopeningapproval.controller.View1"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m">
+<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+				</headerTitle>
+		<headerContent>
+                   	<m:FlexBox wrap="Wrap" fitContainer="true">
+    <m:Image class="sapUiSmallMarginEnd" src="Image/header.jpg" width="100%" height="auto" />
+</m:FlexBox>
+		</headerContent>
+		<sections>
+             <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>sectionsTitle9}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <!-- <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4"> -->
+                            <!-- <f:content> -->
+                            <m:VBox width="100%">
+                                <m:Label text="{i18n>label_1}"/>
+                                <m:Input width="50%" enabled="false" value="xxxxxxx" />
+                                <m:Text text="{i18n>label_2}"></m:Text>
+                                <m:Input width="50%" enabled="false" value="xxxxxxx" />
+                                
+                                <m:Label text="{i18n>label_5}"/>
+                                <m:Input width="50%" enabled="false" value="xxxxxxx" />
+                                <m:Label text="{i18n>label_6}"/>
+                                <m:Input width="50%" enabled="false" value="xxxxxxx" />
+                                <m:Label text="{i18n>label_7}"/>
+
+
+                                <m:Label text="{i18n>label_8}"/>
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+
+                                <m:Label text="{i18n>label_9}"/>
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+                             
+                            </m:VBox>
+                            <!-- </f:content> -->
+                        <!-- </f:SimpleForm> -->
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                         <ObjectPageSection titleUppercase="false" id="Employmsent" title="{i18n>sectionsTitle10}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+
+                            <m:ScrollContainer
+                                width="100%"
+                                height="auto"
+                                horizontal="true"
+                                vertical="false">
+                                <m:Table id="price"
+                                    inset="false"
+                                    growing="true"
+                                    growingScrollToLoad="true"
+                                    width="100%">
+                                    
+                                    <m:columns>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_1}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_2}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_3}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_4}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_5}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>heading_6}" />
+                                        </m:Column>
+                                    </m:columns>
+                                    <m:items>
+                                        <!-- Example Rows -->
+                                          <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text=""/>
+                                                <m:Text text="{i18n>tlabel_0}" />
+                                                <m:Text text="{i18n>tlabel_1}" />
+                                                <m:Text text="{i18n>tlabel_1}" />
+                                                <m:Text text="{i18n>tlabel_2}" />
+                                                <m:Text text="{i18n>tlabel_2}" />  
+
+                                            </m:cells>
+                                        </m:ColumnListItem>
+
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text=""/>
+                                                <m:Text text="{i18n>tlabel_3}" />
+                                                <m:Text text="{i18n>tlabel_4}" />
+                                                <m:Text text="{i18n>tlabel_4}" />
+                                                <m:Text text="{i18n>tlabel_4}" />
+                                                <m:Text text="{i18n>tlabel_4}" />  
+                                            </m:cells>
+                                        </m:ColumnListItem>
+
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_1}"/>
+                                                <m:Text text="{i18n>sn_1_label}" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_2}"/>
+                                                <m:Text text="{i18n>sn_2_label}" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <!-- Add more rows as needed -->
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_3}"/>
+                                                <m:Text text="{i18n>sn_3_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_4}"/>
+                                                <m:Text text="{i18n>sn_4_label}" />
+                                                  <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_5}"/>
+                                                <m:Text text="{i18n>sn_5_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_6}"/>
+                                                <m:Text text="{i18n>sn_6_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_7}"/>
+                                                <m:Text text="{i18n>sn_7_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_8}"/>
+                                                <m:Text text="{i18n>sn_8_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_9}"/>
+                                                <m:Text text="{i18n>sn_9_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_10}"/>
+                                                <m:Text text="{i18n>sn_10_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text="{i18n>sn_11}"/>
+                                                <m:Text text="{i18n>sn_11_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text=""/>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                   
+                                    <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text=""/>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                  
+                                    <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:ObjectIdentifier text=""/>
+                                                <m:Text text="{i18n>sn_12_label}" />
+                                             <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />  
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                    
+                                    </m:items>
+                                </m:Table>
+                            </m:ScrollContainer>
+
+
+                          
+                    </ObjectPageSubSection>
+ 
+                </subSections>
+            </ObjectPageSection>
+ 
+
+                        
+                        
+                        
+            <ObjectPageSection titleUppercase="false" id="Emplo" title="{i18n>sectionsTitle11}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                            <f:content>
+       
+    
+
+                                <m:Label text="{i18n>sn_13_label}"/>
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+
+								<m:Label text="{i18n>sn_14_label}"/>
+							    <m:TextArea value="" maxLength="50" width="100%"/>
+
+                                <m:Label text="{i18n>sn_15_label}" labelFor="groupF" />
+                                <m:TextArea value="" maxLength="50" width="100%"/>
+
+
+                            </f:content>
+                    </f:SimpleForm>    
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+
+
+            <ObjectPageSection titleUppercase="false" id="secTitle" title="{i18n>Section-4}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                            <m:ScrollContainer
+                                width="100%"
+                                height="auto"
+                                horizontal="true"
+                                vertical="false">
+                                <m:Table 
+                                    inset="false"
+                                    growing="true"
+                                    growingScrollToLoad="true"
+                                    items="">
+                                    <m:headerToolbar>
+                                        <m:Toolbar>
+                                            <m:Title text="{i18n>table_title}" />
+                                            <m:ToolbarSpacer />
+                                            <m:Button icon="sap-icon://add"  press="onAddRow" />
+                                            <m:Button icon="sap-icon://edit" press="onEditTable" />
+                                        </m:Toolbar>
+                                    </m:headerToolbar>
+                                    
+                                    <m:columns>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_1}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_2}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_3}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_4}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_5}" />
+                                        </m:Column>
+                                        <m:Column width="12em">
+                                            <m:Text text="{i18n>t2_header_6}" />
+                                        </m:Column>
+                                    </m:columns>
+                                    
+                                    <m:items>
+                                        <!-- Row 1 -->
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="{i18n>t2_lable_1}" />
+                                                <m:Text text="{i18n>t2_lable_6}" />
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        
+                                        <!-- Row 2 -->
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="{i18n>t2_lable_2}" />
+                                                <m:Text text="{i18n>t2_lable_7}" />
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        
+                                        <!-- Row 3 -->
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="{i18n>t2_lable_3}" />
+                                                <m:Text text="{i18n>t2_lable_8}" />
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        
+                                        <!-- Row 4 -->
+                                        <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="{i18n>t2_lable_4}" />
+                                                <m:Text text="{i18n>t2_lable_9}" />
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+
+                                            <m:ColumnListItem vAlign="Middle">
+                                            <m:cells>
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="" />
+                                                <m:Text text="{i18n>t2_lable_5}" />
+                                                <m:Text text="{i18n>t2_lable_9}" />
+                                                <m:Text text="" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                        
+                                    </m:items>
+                                </m:Table>
+                            </m:ScrollContainer>
+
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+
+     
+            
+        </sections>
+
+  
+
+
+        <footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button text="{i18n>btn_1}"  press="" />
+				<m:Button text="{i18n>btn_2}" press="" />
+				<m:Button text="{i18n>btn_3}"  press=""/>
+				<m:Button text="{i18n>btn_4}" press="" />
+			</m:OverflowToolbar>
+		</footer>
+       
+
+
+	</ObjectPageLayout>
+</mvc:View>

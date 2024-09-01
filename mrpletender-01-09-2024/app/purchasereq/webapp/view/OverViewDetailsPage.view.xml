@@ -1,0 +1,160 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:p="sap.suite.ui.commons"
+	controllerName="mrpl.mm.releasedprs.purchasereq.controller.OverViewDetailsPage"
+	height="100%">
+
+    
+<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+
+				<ObjectPageDynamicHeaderTitle>
+					<expandedHeading>
+						<m:Title text="{tileJSONModel>/PurchaseRequisition}"  binding="{tileJSONModel>/}" wrapping="true"/>
+					</expandedHeading>
+
+					<snappedHeading>
+						<m:FlexBox fitContainer="true" alignItems="Center">
+							<m:Title text="{tileJSONModel>/PurchaseRequisition}"  binding="{tileJSONModel>/}" wrapping="true" />
+						</m:FlexBox>
+					</snappedHeading>
+				</ObjectPageDynamicHeaderTitle>
+                 
+        </headerTitle>
+
+<headerContent>
+    <m:FlexBox wrap="Wrap" justifyContent="SpaceBetween"> <!-- Changed to "SpaceBetween" -->
+        <!-- First Vertical Layout stays on the left -->
+        <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+            <!-- <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice}"/> -->
+            <m:ObjectStatus text="{tileJSONModel>/PurReqnReleaseStatus}"/>
+            <m:ObjectStatus text="{tileJSONModel>/PurchasingDocumentItem}"/> 
+                <m:ObjectStatus
+                text="{path: 'tileJSONModel>/CreationDate', formatter: '.formatter.formatCreationDate'}"
+                state="Error" />
+        </layout:VerticalLayout>
+
+        <!-- Second Vertical Layout goes to the right -->
+        <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+            <m:ObjectStatus text="{tileJSONModel>/PurchaseRequisitionPrice} {tileJSONModel>/PurReqnItemCurrency}"/>
+            <m:ObjectStatus text="{tileJSONModel>/PurReqnItemCurrency}"/>
+            <m:ObjectStatus
+                text="{path: 'tileJSONModel>/DeliveryDate', formatter: '.formatter.formatCreationDate'}"
+                state="Success" />
+        </layout:VerticalLayout>
+    </m:FlexBox>
+</headerContent>
+
+
+
+
+
+		<sections>
+		    <ObjectPageSection titleUppercase="false" id="Employments" title="{i18n>Process_header}">
+                        <subSections>
+                            <ObjectPageSubSection titleUppercase="false">
+                            <m:Panel>
+                                    <p:ProcessFlow
+                                        id="processflow1"
+                                        scrollable="false"
+                                        foldedCorners="true"
+                                        nodePress="onNodePress"
+                                        nodes="{/nodes}"
+                                        lanes="{/lanes}">
+                                        <p:nodes>
+                                            <p:ProcessFlowNode
+                                                laneId="{lane}"
+                                                nodeId="{id}"
+                                                title="{title}"
+                                                titleAbbreviation="{titleAbbreviation}"
+                                                children="{children}"
+                                                state="{state}"
+                                                stateText="{stateText}"
+                                                texts="{texts}"
+                                                highlighted="{highlighted}"
+                                                focused="{focused}" />
+                                        </p:nodes>
+                                        <p:lanes>
+                                            <p:ProcessFlowLaneHeader
+                                                laneId="{id}"
+                                                iconSrc="{icon}"
+                                                text="{label}"
+                                                position="{position}" />
+                                        </p:lanes>
+                                    </p:ProcessFlow>
+                                </m:Panel>
+                            </ObjectPageSubSection>
+                        </subSections>
+            </ObjectPageSection>
+
+                         <ObjectPageSection titleUppercase="false" id="Employment" title="{i18n>Header1}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                      <m:Table id="idProductsTable"
+                            inset="false"
+                            items="{tileJSONModel>/}">
+
+                            <m:columns>
+                                <!-- First Column -->
+                                <m:Column
+                                    width="12em">
+                                    <m:Text text="Purchase Requisition Item" />
+                                </m:Column>
+                                <!-- Second Column -->
+                                <m:Column
+                                     width="12em">
+                                    <m:Text text="Pur Reqn Release Status" />
+                                </m:Column>
+                                <!-- Third Column -->
+                                <m:Column
+                                         width="12em">
+                                    <m:Text text="Purchase Requisition Type" />
+                                </m:Column>
+                                <!-- Fourth Column -->
+                                <m:Column
+                                     width="12em">
+                                    <m:Text text="Purchase Requisition Item Text" />
+                                </m:Column>
+                            </m:columns>
+                            <m:items>
+                                <m:ColumnListItem vAlign="Middle">
+                                    <m:cells>
+                                        <!-- Cell for ITEM CODE -->
+                                        <m:ObjectIdentifier
+                                            text="{tileJSONModel>/PurchaseRequisitionItem}" />
+                                        <!-- Cell for Supplier -->
+                                        <m:Text
+                                            text="{tileJSONModel>/PurReqnReleaseStatus}" />
+                                        <!-- Cell for Dimensions -->
+                                        <m:Text
+                                            text="{tileJSONModel>/PurchaseRequisitionType}" />
+                                        <!-- Cell for Price -->
+                                        <m:Text
+                                            text="{tileJSONModel>/PurchaseRequisitionItemText}" />
+                                    </m:cells>
+                                </m:ColumnListItem>
+                            </m:items>
+                        </m:Table>
+
+                    </ObjectPageSubSection>
+                 </subSections>
+            </ObjectPageSection>
+                        
+        </sections>
+        <footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button text="{i18n>Btn1}" press="onDownloadPDF" />
+					<m:Button text="{i18n>Btn2}" press="onPrintPDF" />
+                    	<m:Button text="{i18n>Btn3}" press="onPrint" />
+				</m:contentRight>
+			</m:Bar>
+		</footer>
+	</ObjectPageLayout>
+
+</mvc:View>

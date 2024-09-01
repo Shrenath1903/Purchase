@@ -1,0 +1,70 @@
+{
+  "name": "mrpl-etender",
+  "version": "1.0.0",
+  "description": "MRPL E-tender",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.13.1",
+    "@sap-cloud-sdk/http-client": "^3.19.0",
+    "@sap/approuter": "^16.7.0",
+    "@sap/cds": "^8",
+    "@sap/xssec": "^4.2.1",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
+    "@cap-js/sqlite": "^1",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2",
+    "@sap/cds-dk": "^7.1.1",
+    "@sap/ui5-builder-webide-extension": "^1.1.9",
+    "@sap/ux-specification": "^1.120.17",
+    "@sap/ux-ui5-tooling": "1",
+    "@ui5/cli": "^3.0.0",
+    "cds-launchpad-plugin": "^2.2.0",
+    "mbt": "^1.2.27",
+    "rimraf": "^5.0.5",
+    "ui5-task-zipper": "^3.1.3"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "undeploy": "cf undeploy mrpl-etender --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-purchasereq": "cds watch --open purchasereq/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ceg": "cds watch --open ceg/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pqc": "cds watch --open pqc/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-singlecertificatetender": "cds watch --open singlecertificatetender/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-austerityapproval": "cds watch --open austerityapproval/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-tenderdocument": "cds watch --open tenderdocument/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-emd": "cds watch --open emd/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-bidevaluation": "cds watch --open bidevaluation/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-negotiation": "cds watch --open negotiation/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-checklist": "cds watch --open checklist/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "destinations": true,
+      "html5-repo": true,
+      "ZC_MM_PURREQ_CDS": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZC_MM_PURREQ_CDS",
+        "credentials": {
+          "destination": "cust_portal",
+          "path": "/sap/opu/odata/sap/ZC_MM_PURREQ_CDS/"
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/purchasereq",
+    "app/ceg",
+    "app/pqc",
+    "app/singlecertificatetender",
+    "app/austerityapproval",
+    "app/tenderdocument",
+    "app/emd",
+    "app/bidevaluation"
+  ]
+}

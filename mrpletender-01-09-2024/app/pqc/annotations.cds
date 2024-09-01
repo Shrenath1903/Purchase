@@ -1,0 +1,1 @@
+using etender_S4Service as service from '../../srv/etender-s4-service';
